@@ -1,0 +1,5126 @@
+[
+  {
+    "customer_id": "SBI10004",
+    "customer_name": "Ekbal Narayanan",
+    "age": 28,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b924,204 to \u20b949,378 (104% jump)",
+    "old_value": 24204,
+    "new_value": 49378,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.123630"
+  },
+  {
+    "customer_id": "SBI10015",
+    "customer_name": "Ikbal Malhotra",
+    "age": 46,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b932,140 to \u20b962,434 (94% jump)",
+    "old_value": 32140,
+    "new_value": 62434,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.355538"
+  },
+  {
+    "customer_id": "SBI10016",
+    "customer_name": "Ayush Seshadri",
+    "age": 22,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9233,125 to \u20b9603,785 (159% jump)",
+    "old_value": 233125,
+    "new_value": 603785,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.374852"
+  },
+  {
+    "customer_id": "SBI10025",
+    "customer_name": "Urishilla Sampath",
+    "age": 37,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b934,260 to \u20b962,251 (82% jump)",
+    "old_value": 34260,
+    "new_value": 62251,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.550252"
+  },
+  {
+    "customer_id": "SBI10063",
+    "customer_name": "Gayathri Kanda",
+    "age": 40,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b979,637 to \u20b9223,812 (181% jump)",
+    "old_value": 79637,
+    "new_value": 223812,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.297117"
+  },
+  {
+    "customer_id": "SBI10067",
+    "customer_name": "Siya Sarkar",
+    "age": 46,
+    "city": "Ahmedabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b936,149 to \u20b968,255 (89% jump)",
+    "old_value": 36149,
+    "new_value": 68255,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.375435"
+  },
+  {
+    "customer_id": "SBI10083",
+    "customer_name": "Urishilla Lanka",
+    "age": 23,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b954,518 to \u20b9105,177 (93% jump)",
+    "old_value": 54518,
+    "new_value": 105177,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.692839"
+  },
+  {
+    "customer_id": "SBI10088",
+    "customer_name": "Tanish Kulkarni",
+    "age": 44,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b931,439 to \u20b959,848 (90% jump)",
+    "old_value": 31439,
+    "new_value": 59848,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.792982"
+  },
+  {
+    "customer_id": "SBI10090",
+    "customer_name": "Ayush Bedi",
+    "age": 31,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9106,318 to \u20b9273,702 (157% jump)",
+    "old_value": 106318,
+    "new_value": 273702,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.835190"
+  },
+  {
+    "customer_id": "SBI10101",
+    "customer_name": "Timothy Pingle",
+    "age": 33,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b923,639 to \u20b943,385 (84% jump)",
+    "old_value": 23639,
+    "new_value": 43385,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.051522"
+  },
+  {
+    "customer_id": "SBI10105",
+    "customer_name": "Mitesh Ganesh",
+    "age": 31,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b934,686 to \u20b975,121 (117% jump)",
+    "old_value": 34686,
+    "new_value": 75121,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.129898"
+  },
+  {
+    "customer_id": "SBI10109",
+    "customer_name": "Upma Rana",
+    "age": 22,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b935,487 to \u20b977,817 (119% jump)",
+    "old_value": 35487,
+    "new_value": 77817,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.214108"
+  },
+  {
+    "customer_id": "SBI10114",
+    "customer_name": "Rushil Bains",
+    "age": 54,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b939,286 to \u20b994,562 (141% jump)",
+    "old_value": 39286,
+    "new_value": 94562,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.312364"
+  },
+  {
+    "customer_id": "SBI10115",
+    "customer_name": "Netra Dora",
+    "age": 42,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9108,060 to \u20b9216,239 (100% jump)",
+    "old_value": 108060,
+    "new_value": 216239,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.332112"
+  },
+  {
+    "customer_id": "SBI10123",
+    "customer_name": "Max Boase",
+    "age": 48,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b917,820 to \u20b940,399 (127% jump)",
+    "old_value": 17820,
+    "new_value": 40399,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.489746"
+  },
+  {
+    "customer_id": "SBI10127",
+    "customer_name": "Faras Edwin",
+    "age": 40,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b918,439 to \u20b936,025 (95% jump)",
+    "old_value": 18439,
+    "new_value": 36025,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.568826"
+  },
+  {
+    "customer_id": "SBI10132",
+    "customer_name": "Samarth Nanda",
+    "age": 31,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b953,987 to \u20b9110,682 (105% jump)",
+    "old_value": 53987,
+    "new_value": 110682,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.666953"
+  },
+  {
+    "customer_id": "SBI10137",
+    "customer_name": "Champak Choudhry",
+    "age": 40,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b919,397 to \u20b951,231 (164% jump)",
+    "old_value": 19397,
+    "new_value": 51231,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.765028"
+  },
+  {
+    "customer_id": "SBI10140",
+    "customer_name": "Krishna Agate",
+    "age": 22,
+    "city": "Ahmedabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b922,116 to \u20b946,426 (110% jump)",
+    "old_value": 22116,
+    "new_value": 46426,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.824856"
+  },
+  {
+    "customer_id": "SBI10145",
+    "customer_name": "Yashawini Chaudry",
+    "age": 30,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b952,493 to \u20b997,886 (86% jump)",
+    "old_value": 52493,
+    "new_value": 97886,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.923464"
+  },
+  {
+    "customer_id": "SBI10156",
+    "customer_name": "Pavani Karpe",
+    "age": 37,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b925,647 to \u20b963,152 (146% jump)",
+    "old_value": 25647,
+    "new_value": 63152,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.139219"
+  },
+  {
+    "customer_id": "SBI10176",
+    "customer_name": "Ekbal Shenoy",
+    "age": 49,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b956,759 to \u20b9112,011 (97% jump)",
+    "old_value": 56759,
+    "new_value": 112011,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.543437"
+  },
+  {
+    "customer_id": "SBI10179",
+    "customer_name": "Bhanumati Sharma",
+    "age": 23,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b934,506 to \u20b965,808 (91% jump)",
+    "old_value": 34506,
+    "new_value": 65808,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.601552"
+  },
+  {
+    "customer_id": "SBI10184",
+    "customer_name": "Ria Maharaj",
+    "age": 22,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9127,355 to \u20b9268,808 (111% jump)",
+    "old_value": 127355,
+    "new_value": 268808,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.699126"
+  },
+  {
+    "customer_id": "SBI10188",
+    "customer_name": "Bhavika Ganesan",
+    "age": 40,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b943,671 to \u20b9122,071 (180% jump)",
+    "old_value": 43671,
+    "new_value": 122071,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.777092"
+  },
+  {
+    "customer_id": "SBI10190",
+    "customer_name": "Girindra Andra",
+    "age": 47,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b927,405 to \u20b951,766 (89% jump)",
+    "old_value": 27405,
+    "new_value": 51766,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.815837"
+  },
+  {
+    "customer_id": "SBI10197",
+    "customer_name": "Lipika Radhakrishnan",
+    "age": 46,
+    "city": "Ahmedabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b946,448 to \u20b9115,787 (149% jump)",
+    "old_value": 46448,
+    "new_value": 115787,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.952992"
+  },
+  {
+    "customer_id": "SBI10203",
+    "customer_name": "Sai Nagi",
+    "age": 47,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b929,234 to \u20b976,894 (163% jump)",
+    "old_value": 29234,
+    "new_value": 76894,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.070201"
+  },
+  {
+    "customer_id": "SBI10228",
+    "customer_name": "Owen Narula",
+    "age": 25,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b923,936 to \u20b950,820 (112% jump)",
+    "old_value": 23936,
+    "new_value": 50820,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.566693"
+  },
+  {
+    "customer_id": "SBI10237",
+    "customer_name": "Lucky Balakrishnan",
+    "age": 30,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b919,647 to \u20b944,893 (128% jump)",
+    "old_value": 19647,
+    "new_value": 44893,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.743080"
+  },
+  {
+    "customer_id": "SBI10242",
+    "customer_name": "Gopal Sarin",
+    "age": 32,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b922,934 to \u20b955,762 (143% jump)",
+    "old_value": 22934,
+    "new_value": 55762,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.840857"
+  },
+  {
+    "customer_id": "SBI10250",
+    "customer_name": "Unnati Raghavan",
+    "age": 54,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b932,564 to \u20b978,141 (140% jump)",
+    "old_value": 32564,
+    "new_value": 78141,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.999259"
+  },
+  {
+    "customer_id": "SBI10262",
+    "customer_name": "Oliver Dyal",
+    "age": 38,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b958,494 to \u20b9133,852 (129% jump)",
+    "old_value": 58494,
+    "new_value": 133852,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.254860"
+  },
+  {
+    "customer_id": "SBI10282",
+    "customer_name": "Jalsa Chowdhury",
+    "age": 39,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b926,998 to \u20b962,687 (132% jump)",
+    "old_value": 26998,
+    "new_value": 62687,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.660619"
+  },
+  {
+    "customer_id": "SBI10292",
+    "customer_name": "Aahana Khosla",
+    "age": 34,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b955,195 to \u20b9100,957 (83% jump)",
+    "old_value": 55195,
+    "new_value": 100957,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.860038"
+  },
+  {
+    "customer_id": "SBI10300",
+    "customer_name": "Ojasvi Tripathi",
+    "age": 54,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b927,152 to \u20b973,709 (171% jump)",
+    "old_value": 27152,
+    "new_value": 73709,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.018147"
+  },
+  {
+    "customer_id": "SBI10304",
+    "customer_name": "Anay Naik",
+    "age": 26,
+    "city": "Mumbai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b949,014 to \u20b9130,649 (167% jump)",
+    "old_value": 49014,
+    "new_value": 130649,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.096064"
+  },
+  {
+    "customer_id": "SBI10311",
+    "customer_name": "Neelima Goswami",
+    "age": 23,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9118,592 to \u20b9262,958 (122% jump)",
+    "old_value": 118592,
+    "new_value": 262958,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.237027"
+  },
+  {
+    "customer_id": "SBI10325",
+    "customer_name": "Mitesh Pant",
+    "age": 51,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b946,611 to \u20b9107,816 (131% jump)",
+    "old_value": 46611,
+    "new_value": 107816,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.511148"
+  },
+  {
+    "customer_id": "SBI10331",
+    "customer_name": "Gaurav Nazareth",
+    "age": 22,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b955,482 to \u20b9125,486 (126% jump)",
+    "old_value": 55482,
+    "new_value": 125486,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.630490"
+  },
+  {
+    "customer_id": "SBI10333",
+    "customer_name": "Azad Ahuja",
+    "age": 48,
+    "city": "Mumbai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b926,342 to \u20b965,519 (149% jump)",
+    "old_value": 26342,
+    "new_value": 65519,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.669199"
+  },
+  {
+    "customer_id": "SBI10346",
+    "customer_name": "Darpan Bahl",
+    "age": 53,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b989,251 to \u20b9173,207 (94% jump)",
+    "old_value": 89251,
+    "new_value": 173207,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.927215"
+  },
+  {
+    "customer_id": "SBI10348",
+    "customer_name": "Laksh Kaul",
+    "age": 39,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b932,843 to \u20b987,431 (166% jump)",
+    "old_value": 32843,
+    "new_value": 87431,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.966868"
+  },
+  {
+    "customer_id": "SBI10349",
+    "customer_name": "Aashi Wadhwa",
+    "age": 27,
+    "city": "Mumbai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b919,982 to \u20b935,557 (78% jump)",
+    "old_value": 19982,
+    "new_value": 35557,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.986528"
+  },
+  {
+    "customer_id": "SBI10360",
+    "customer_name": "Amrita Hegde",
+    "age": 33,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b926,837 to \u20b959,160 (120% jump)",
+    "old_value": 26837,
+    "new_value": 59160,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.211352"
+  },
+  {
+    "customer_id": "SBI10383",
+    "customer_name": "Brijesh Patil",
+    "age": 32,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b992,462 to \u20b9193,777 (110% jump)",
+    "old_value": 92462,
+    "new_value": 193777,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.675257"
+  },
+  {
+    "customer_id": "SBI10421",
+    "customer_name": "Dakshesh Rau",
+    "age": 33,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b939,664 to \u20b9104,793 (164% jump)",
+    "old_value": 39664,
+    "new_value": 104793,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.434642"
+  },
+  {
+    "customer_id": "SBI10425",
+    "customer_name": "Wriddhish Bera",
+    "age": 38,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b920,789 to \u20b943,643 (110% jump)",
+    "old_value": 20789,
+    "new_value": 43643,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.513806"
+  },
+  {
+    "customer_id": "SBI10428",
+    "customer_name": "Laban Walia",
+    "age": 26,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b938,916 to \u20b979,755 (105% jump)",
+    "old_value": 38916,
+    "new_value": 79755,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.574108"
+  },
+  {
+    "customer_id": "SBI10437",
+    "customer_name": "Sarthak Badal",
+    "age": 47,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b950,387 to \u20b994,438 (87% jump)",
+    "old_value": 50387,
+    "new_value": 94438,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.767766"
+  },
+  {
+    "customer_id": "SBI10438",
+    "customer_name": "Yashasvi Kannan",
+    "age": 40,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9151,177 to \u20b9315,092 (108% jump)",
+    "old_value": 151177,
+    "new_value": 315092,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.787823"
+  },
+  {
+    "customer_id": "SBI10442",
+    "customer_name": "Victor Sem",
+    "age": 32,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b966,070 to \u20b9121,299 (84% jump)",
+    "old_value": 66070,
+    "new_value": 121299,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.869130"
+  },
+  {
+    "customer_id": "SBI10457",
+    "customer_name": "Orinder Pandey",
+    "age": 46,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b974,461 to \u20b9152,632 (105% jump)",
+    "old_value": 74461,
+    "new_value": 152632,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.164172"
+  },
+  {
+    "customer_id": "SBI10466",
+    "customer_name": "Anjali Shroff",
+    "age": 47,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b997,850 to \u20b9195,288 (100% jump)",
+    "old_value": 97850,
+    "new_value": 195288,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.342915"
+  },
+  {
+    "customer_id": "SBI10470",
+    "customer_name": "Ranveer Narang",
+    "age": 48,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b924,689 to \u20b956,085 (127% jump)",
+    "old_value": 24689,
+    "new_value": 56085,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.421724"
+  },
+  {
+    "customer_id": "SBI10472",
+    "customer_name": "Warinder Pillai",
+    "age": 40,
+    "city": "Mumbai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b962,558 to \u20b9150,141 (140% jump)",
+    "old_value": 62558,
+    "new_value": 150141,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.460933"
+  },
+  {
+    "customer_id": "SBI10482",
+    "customer_name": "Darika Parsa",
+    "age": 28,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b934,546 to \u20b967,236 (95% jump)",
+    "old_value": 34546,
+    "new_value": 67236,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.657934"
+  },
+  {
+    "customer_id": "SBI10491",
+    "customer_name": "Janani Srinivas",
+    "age": 44,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9117,392 to \u20b9212,718 (81% jump)",
+    "old_value": 117392,
+    "new_value": 212718,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.833867"
+  },
+  {
+    "customer_id": "SBI10495",
+    "customer_name": "Dipta Guha",
+    "age": 28,
+    "city": "Chennai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.98,
+    "signal": "Salary increased from \u20b9105,075 to \u20b9203,168 (93% jump)",
+    "old_value": 105075,
+    "new_value": 203168,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.913143"
+  },
+  {
+    "customer_id": "SBI10010",
+    "customer_name": "Garima Char",
+    "age": 36,
+    "city": "Pune",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.97,
+    "signal": "Salary increased from \u20b928,065 to \u20b948,979 (75% jump)",
+    "old_value": 28065,
+    "new_value": 48979,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.253536"
+  },
+  {
+    "customer_id": "SBI10013",
+    "customer_name": "Omaja Dixit",
+    "age": 49,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.96,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.316929"
+  },
+  {
+    "customer_id": "SBI10129",
+    "customer_name": "Zinal Kala",
+    "age": 36,
+    "city": "Kolkata",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.96,
+    "signal": "Salary increased from \u20b924,116 to \u20b941,470 (72% jump)",
+    "old_value": 24116,
+    "new_value": 41470,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.608240"
+  },
+  {
+    "customer_id": "SBI10141",
+    "customer_name": "Ayush Nath",
+    "age": 49,
+    "city": "Hyderabad",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.96,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.844607"
+  },
+  {
+    "customer_id": "SBI10200",
+    "customer_name": "Urishilla Narain",
+    "age": 55,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 3,
+    "confidence": 0.96,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.011885"
+  },
+  {
+    "customer_id": "SBI10233",
+    "customer_name": "Ojas Ghosh",
+    "age": 44,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.96,
+    "signal": "Salary increased from \u20b918,959 to \u20b932,507 (71% jump)",
+    "old_value": 18959,
+    "new_value": 32507,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.664380"
+  },
+  {
+    "customer_id": "SBI10240",
+    "customer_name": "Yauvani Sani",
+    "age": 29,
+    "city": "Bengaluru",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.96,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.801804"
+  },
+  {
+    "customer_id": "SBI10312",
+    "customer_name": "Girish Barman",
+    "age": 25,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.96,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.256672"
+  },
+  {
+    "customer_id": "SBI10383",
+    "customer_name": "Brijesh Patil",
+    "age": 32,
+    "city": "Delhi",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.96,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.675353"
+  },
+  {
+    "customer_id": "SBI10016",
+    "customer_name": "Ayush Seshadri",
+    "age": 22,
+    "city": "Delhi",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 3,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.374930"
+  },
+  {
+    "customer_id": "SBI10062",
+    "customer_name": "Aashi Ramanathan",
+    "age": 33,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.277800"
+  },
+  {
+    "customer_id": "SBI10158",
+    "customer_name": "Urvi Purohit",
+    "age": 51,
+    "city": "Delhi",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.183219"
+  },
+  {
+    "customer_id": "SBI10166",
+    "customer_name": "Jyoti Raman",
+    "age": 52,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.348107"
+  },
+  {
+    "customer_id": "SBI10211",
+    "customer_name": "Omaja Vaidya",
+    "age": 55,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.229067"
+  },
+  {
+    "customer_id": "SBI10222",
+    "customer_name": "Fariq Sha",
+    "age": 54,
+    "city": "Lucknow",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.448852"
+  },
+  {
+    "customer_id": "SBI10288",
+    "customer_name": "Jacob Mohan",
+    "age": 40,
+    "city": "Mumbai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 3,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.779211"
+  },
+  {
+    "customer_id": "SBI10295",
+    "customer_name": "Dayamai Wali",
+    "age": 22,
+    "city": "Hyderabad",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.918688"
+  },
+  {
+    "customer_id": "SBI10318",
+    "customer_name": "Krisha Sood",
+    "age": 36,
+    "city": "Hyderabad",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.374226"
+  },
+  {
+    "customer_id": "SBI10321",
+    "customer_name": "Faris Pandya",
+    "age": 39,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.432313"
+  },
+  {
+    "customer_id": "SBI10330",
+    "customer_name": "Onkar Mohan",
+    "age": 25,
+    "city": "Lucknow",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.611064"
+  },
+  {
+    "customer_id": "SBI10346",
+    "customer_name": "Darpan Bahl",
+    "age": 53,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.927322"
+  },
+  {
+    "customer_id": "SBI10373",
+    "customer_name": "Falguni Narula",
+    "age": 47,
+    "city": "Bengaluru",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.473126"
+  },
+  {
+    "customer_id": "SBI10393",
+    "customer_name": "Bhavani Varty",
+    "age": 30,
+    "city": "Bengaluru",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 3,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.879940"
+  },
+  {
+    "customer_id": "SBI10429",
+    "customer_name": "Atharv Minhas",
+    "age": 36,
+    "city": "Lucknow",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.593943"
+  },
+  {
+    "customer_id": "SBI10466",
+    "customer_name": "Anjali Shroff",
+    "age": 47,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.343014"
+  },
+  {
+    "customer_id": "SBI10487",
+    "customer_name": "Falguni Lala",
+    "age": 34,
+    "city": "Bengaluru",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.755709"
+  },
+  {
+    "customer_id": "SBI10491",
+    "customer_name": "Janani Srinivas",
+    "age": 44,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.833970"
+  },
+  {
+    "customer_id": "SBI10494",
+    "customer_name": "Udyati Menon",
+    "age": 45,
+    "city": "Mumbai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.95,
+    "signal": "Salary increased from \u20b9119,009 to \u20b9201,319 (69% jump)",
+    "old_value": 119009,
+    "new_value": 201319,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.893161"
+  },
+  {
+    "customer_id": "SBI10494",
+    "customer_name": "Udyati Menon",
+    "age": 45,
+    "city": "Mumbai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.95,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.893256"
+  },
+  {
+    "customer_id": "SBI10073",
+    "customer_name": "Vasatika More",
+    "age": 37,
+    "city": "Hyderabad",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.492662"
+  },
+  {
+    "customer_id": "SBI10115",
+    "customer_name": "Netra Dora",
+    "age": 42,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.332305"
+  },
+  {
+    "customer_id": "SBI10120",
+    "customer_name": "Odika Hegde",
+    "age": 54,
+    "city": "Mumbai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.430510"
+  },
+  {
+    "customer_id": "SBI10241",
+    "customer_name": "Rajeshri Sawhney",
+    "age": 42,
+    "city": "Pune",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.821236"
+  },
+  {
+    "customer_id": "SBI10244",
+    "customer_name": "Oeshi Madan",
+    "age": 27,
+    "city": "Delhi",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.880447"
+  },
+  {
+    "customer_id": "SBI10258",
+    "customer_name": "Chavvi Nanda",
+    "age": 42,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.167277"
+  },
+  {
+    "customer_id": "SBI10382",
+    "customer_name": "Oliver Agrawal",
+    "age": 53,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.654659"
+  },
+  {
+    "customer_id": "SBI10438",
+    "customer_name": "Yashasvi Kannan",
+    "age": 40,
+    "city": "Hyderabad",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.787913"
+  },
+  {
+    "customer_id": "SBI10457",
+    "customer_name": "Orinder Pandey",
+    "age": 46,
+    "city": "Pune",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.164294"
+  },
+  {
+    "customer_id": "SBI10495",
+    "customer_name": "Dipta Guha",
+    "age": 28,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.94,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.913252"
+  },
+  {
+    "customer_id": "SBI10090",
+    "customer_name": "Ayush Bedi",
+    "age": 31,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.93,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.835326"
+  },
+  {
+    "customer_id": "SBI10162",
+    "customer_name": "Yashica Sankar",
+    "age": 23,
+    "city": "Bengaluru",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.93,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.266152"
+  },
+  {
+    "customer_id": "SBI10258",
+    "customer_name": "Chavvi Nanda",
+    "age": 42,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.93,
+    "signal": "Salary increased from \u20b9113,057 to \u20b9188,153 (66% jump)",
+    "old_value": 113057,
+    "new_value": 188153,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.167180"
+  },
+  {
+    "customer_id": "SBI10319",
+    "customer_name": "Damini Palla",
+    "age": 48,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.93,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.393588"
+  },
+  {
+    "customer_id": "SBI10352",
+    "customer_name": "Janya Dyal",
+    "age": 37,
+    "city": "Jaipur",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.93,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.048836"
+  },
+  {
+    "customer_id": "SBI10454",
+    "customer_name": "Qabil Chander",
+    "age": 54,
+    "city": "Pune",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.93,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.105418"
+  },
+  {
+    "customer_id": "SBI10199",
+    "customer_name": "Ira Varma",
+    "age": 28,
+    "city": "Pune",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.92,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.992394"
+  },
+  {
+    "customer_id": "SBI10307",
+    "customer_name": "Jacob Gour",
+    "age": 27,
+    "city": "Lucknow",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.92,
+    "signal": "Salary increased from \u20b984,735 to \u20b9138,214 (63% jump)",
+    "old_value": 84735,
+    "new_value": 138214,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.154990"
+  },
+  {
+    "customer_id": "SBI10311",
+    "customer_name": "Neelima Goswami",
+    "age": 23,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.92,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.237139"
+  },
+  {
+    "customer_id": "SBI10392",
+    "customer_name": "Raagini Sheth",
+    "age": 28,
+    "city": "Bengaluru",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 4,
+    "confidence": 0.92,
+    "signal": "Salary increased from \u20b959,230 to \u20b997,093 (64% jump)",
+    "old_value": 59230,
+    "new_value": 97093,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.860394"
+  },
+  {
+    "customer_id": "SBI10184",
+    "customer_name": "Ria Maharaj",
+    "age": 22,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 4,
+    "confidence": 0.91,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.699217"
+  },
+  {
+    "customer_id": "SBI10063",
+    "customer_name": "Gayathri Kanda",
+    "age": 40,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.9,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.297212"
+  },
+  {
+    "customer_id": "SBI10215",
+    "customer_name": "Chakradev Kurian",
+    "age": 25,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 6,
+    "confidence": 0.9,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.309223"
+  },
+  {
+    "customer_id": "SBI10474",
+    "customer_name": "Liam Khosla",
+    "age": 23,
+    "city": "Kolkata",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.9,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.500882"
+  },
+  {
+    "customer_id": "SBI10014",
+    "customer_name": "Pooja Kade",
+    "age": 25,
+    "city": "Delhi",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.89,
+    "signal": "Salary increased from \u20b933,185 to \u20b952,310 (58% jump)",
+    "old_value": 33185,
+    "new_value": 52310,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.336205"
+  },
+  {
+    "customer_id": "SBI10046",
+    "customer_name": "Ishita Som",
+    "age": 53,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.89,
+    "signal": "Salary increased from \u20b993,429 to \u20b9147,803 (58% jump)",
+    "old_value": 93429,
+    "new_value": 147803,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.959942"
+  },
+  {
+    "customer_id": "SBI10113",
+    "customer_name": "Daksha Prasad",
+    "age": 40,
+    "city": "Ahmedabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.89,
+    "signal": "Salary increased from \u20b957,121 to \u20b989,918 (57% jump)",
+    "old_value": 57121,
+    "new_value": 89918,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.292902"
+  },
+  {
+    "customer_id": "SBI10278",
+    "customer_name": "Wridesh Chaudhari",
+    "age": 40,
+    "city": "Chennai",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 5,
+    "confidence": 0.89,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.578537"
+  },
+  {
+    "customer_id": "SBI10412",
+    "customer_name": "Jonathan Malhotra",
+    "age": 47,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.88,
+    "signal": "Salary increased from \u20b954,952 to \u20b985,568 (56% jump)",
+    "old_value": 54952,
+    "new_value": 85568,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.255050"
+  },
+  {
+    "customer_id": "SBI10445",
+    "customer_name": "Darika Ramesh",
+    "age": 29,
+    "city": "Mumbai",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.88,
+    "signal": "Salary increased from \u20b969,503 to \u20b9108,721 (56% jump)",
+    "old_value": 69503,
+    "new_value": 108721,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.928925"
+  },
+  {
+    "customer_id": "SBI10005",
+    "customer_name": "Lakshmi Palla",
+    "age": 29,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.87,
+    "signal": "New recurring EMI of \u20b939,592/month detected",
+    "old_value": 0,
+    "new_value": 39592,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.145481"
+  },
+  {
+    "customer_id": "SBI10056",
+    "customer_name": "Simon Thaman",
+    "age": 44,
+    "city": "Lucknow",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "detected_month": 3,
+    "confidence": 0.87,
+    "signal": "Cumulative savings approaching \u20b9100,000 milestone",
+    "old_value": 0,
+    "new_value": 100000,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund \u2014 Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.160076"
+  },
+  {
+    "customer_id": "SBI10313",
+    "customer_name": "Hemal Dayal",
+    "age": 25,
+    "city": "Bengaluru",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.87,
+    "signal": "New recurring EMI of \u20b939,792/month detected",
+    "old_value": 0,
+    "new_value": 39792,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.276204"
+  },
+  {
+    "customer_id": "SBI10060",
+    "customer_name": "Gautami Ratti",
+    "age": 42,
+    "city": "Delhi",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.86,
+    "signal": "New recurring EMI of \u20b938,666/month detected",
+    "old_value": 0,
+    "new_value": 38666,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.238590"
+  },
+  {
+    "customer_id": "SBI10160",
+    "customer_name": "Anamika Oza",
+    "age": 35,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.86,
+    "signal": "New recurring EMI of \u20b939,178/month detected",
+    "old_value": 0,
+    "new_value": 39178,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.225939"
+  },
+  {
+    "customer_id": "SBI10358",
+    "customer_name": "Tamanna Gara",
+    "age": 42,
+    "city": "Hyderabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.85,
+    "signal": "New recurring EMI of \u20b937,446/month detected",
+    "old_value": 0,
+    "new_value": 37446,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.169913"
+  },
+  {
+    "customer_id": "SBI10377",
+    "customer_name": "Yauvani Pillai",
+    "age": 44,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.85,
+    "signal": "New recurring EMI of \u20b937,284/month detected",
+    "old_value": 0,
+    "new_value": 37284,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.553497"
+  },
+  {
+    "customer_id": "SBI10413",
+    "customer_name": "Jackson Morar",
+    "age": 53,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.85,
+    "signal": "New recurring EMI of \u20b937,381/month detected",
+    "old_value": 0,
+    "new_value": 37381,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.274966"
+  },
+  {
+    "customer_id": "SBI10431",
+    "customer_name": "Yauvani Tripathi",
+    "age": 37,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.85,
+    "signal": "New recurring EMI of \u20b938,041/month detected",
+    "old_value": 0,
+    "new_value": 38041,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.648482"
+  },
+  {
+    "customer_id": "SBI10026",
+    "customer_name": "Rajata Ahuja",
+    "age": 22,
+    "city": "Delhi",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.84,
+    "signal": "New recurring EMI of \u20b935,868/month detected",
+    "old_value": 0,
+    "new_value": 35868,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.569756"
+  },
+  {
+    "customer_id": "SBI10125",
+    "customer_name": "Aarini Tak",
+    "age": 37,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.84,
+    "signal": "New recurring EMI of \u20b936,519/month detected",
+    "old_value": 0,
+    "new_value": 36519,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.529396"
+  },
+  {
+    "customer_id": "SBI10154",
+    "customer_name": "Aryan Dhawan",
+    "age": 45,
+    "city": "Lucknow",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.84,
+    "signal": "New recurring EMI of \u20b935,760/month detected",
+    "old_value": 0,
+    "new_value": 35760,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.100256"
+  },
+  {
+    "customer_id": "SBI10182",
+    "customer_name": "Wakeeta Kanda",
+    "age": 48,
+    "city": "Hyderabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.84,
+    "signal": "New recurring EMI of \u20b936,562/month detected",
+    "old_value": 0,
+    "new_value": 36562,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.660082"
+  },
+  {
+    "customer_id": "SBI10328",
+    "customer_name": "Yauvani Pathak",
+    "age": 53,
+    "city": "Lucknow",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.84,
+    "signal": "New recurring EMI of \u20b936,651/month detected",
+    "old_value": 0,
+    "new_value": 36651,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.569980"
+  },
+  {
+    "customer_id": "SBI10352",
+    "customer_name": "Janya Dyal",
+    "age": 37,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.84,
+    "signal": "Salary increased from \u20b9107,658 to \u20b9158,431 (47% jump)",
+    "old_value": 107658,
+    "new_value": 158431,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.048667"
+  },
+  {
+    "customer_id": "SBI10471",
+    "customer_name": "Ayaan Kapoor",
+    "age": 28,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 2,
+    "confidence": 0.84,
+    "signal": "New recurring EMI of \u20b936,174/month detected",
+    "old_value": 0,
+    "new_value": 36174,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.441625"
+  },
+  {
+    "customer_id": "SBI10072",
+    "customer_name": "Chandresh Kala",
+    "age": 50,
+    "city": "Hyderabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.83,
+    "signal": "New recurring EMI of \u20b934,406/month detected",
+    "old_value": 0,
+    "new_value": 34406,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.473071"
+  },
+  {
+    "customer_id": "SBI10395",
+    "customer_name": "Vasana Dutta",
+    "age": 27,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.83,
+    "signal": "New recurring EMI of \u20b935,071/month detected",
+    "old_value": 0,
+    "new_value": 35071,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.919328"
+  },
+  {
+    "customer_id": "SBI10170",
+    "customer_name": "Ati Magar",
+    "age": 43,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.82,
+    "signal": "New recurring EMI of \u20b933,719/month detected",
+    "old_value": 0,
+    "new_value": 33719,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.426879"
+  },
+  {
+    "customer_id": "SBI10365",
+    "customer_name": "Anamika Sarin",
+    "age": 24,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.82,
+    "signal": "New recurring EMI of \u20b934,319/month detected",
+    "old_value": 0,
+    "new_value": 34319,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.310635"
+  },
+  {
+    "customer_id": "SBI10371",
+    "customer_name": "Harsh Chandran",
+    "age": 29,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.82,
+    "signal": "New recurring EMI of \u20b934,026/month detected",
+    "old_value": 0,
+    "new_value": 34026,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.432133"
+  },
+  {
+    "customer_id": "SBI10390",
+    "customer_name": "Ria Bora",
+    "age": 35,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.82,
+    "signal": "New recurring EMI of \u20b933,462/month detected",
+    "old_value": 0,
+    "new_value": 33462,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.820761"
+  },
+  {
+    "customer_id": "SBI10209",
+    "customer_name": "Ekansh Karan",
+    "age": 40,
+    "city": "Ahmedabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 3,
+    "confidence": 0.81,
+    "signal": "Salary increased from \u20b925,093 to \u20b935,659 (42% jump)",
+    "old_value": 25093,
+    "new_value": 35659,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.189792"
+  },
+  {
+    "customer_id": "SBI10399",
+    "customer_name": "Rushil Chowdhury",
+    "age": 30,
+    "city": "Jaipur",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 2,
+    "confidence": 0.81,
+    "signal": "Salary increased from \u20b927,024 to \u20b938,221 (41% jump)",
+    "old_value": 27024,
+    "new_value": 38221,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.998895"
+  },
+  {
+    "customer_id": "SBI10012",
+    "customer_name": "Faris Ganesan",
+    "age": 51,
+    "city": "Bengaluru",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 2,
+    "confidence": 0.8,
+    "signal": "New recurring EMI of \u20b931,611/month detected",
+    "old_value": 0,
+    "new_value": 31611,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.297592"
+  },
+  {
+    "customer_id": "SBI10253",
+    "customer_name": "Raghav Bumb",
+    "age": 41,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.8,
+    "signal": "New recurring EMI of \u20b931,070/month detected",
+    "old_value": 0,
+    "new_value": 31070,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.061976"
+  },
+  {
+    "customer_id": "SBI10373",
+    "customer_name": "Falguni Narula",
+    "age": 47,
+    "city": "Bengaluru",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.79,
+    "signal": "New recurring EMI of \u20b930,545/month detected",
+    "old_value": 0,
+    "new_value": 30545,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.473043"
+  },
+  {
+    "customer_id": "SBI10410",
+    "customer_name": "Yadavi Mutti",
+    "age": 37,
+    "city": "Hyderabad",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "detected_month": 5,
+    "confidence": 0.79,
+    "signal": "Salary increased from \u20b920,701 to \u20b928,556 (38% jump)",
+    "old_value": 20701,
+    "new_value": 28556,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP \u2014 Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.215708"
+  },
+  {
+    "customer_id": "SBI10415",
+    "customer_name": "Samarth Subramaniam",
+    "age": 33,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.79,
+    "signal": "New recurring EMI of \u20b929,995/month detected",
+    "old_value": 0,
+    "new_value": 29995,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.315195"
+  },
+  {
+    "customer_id": "SBI10420",
+    "customer_name": "Sai Pall",
+    "age": 37,
+    "city": "Delhi",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.79,
+    "signal": "New recurring EMI of \u20b929,528/month detected",
+    "old_value": 0,
+    "new_value": 29528,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.415035"
+  },
+  {
+    "customer_id": "SBI10068",
+    "customer_name": "Baljiwan Raj",
+    "age": 28,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.78,
+    "signal": "New recurring EMI of \u20b929,281/month detected",
+    "old_value": 0,
+    "new_value": 29281,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.394932"
+  },
+  {
+    "customer_id": "SBI10120",
+    "customer_name": "Odika Hegde",
+    "age": 54,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.78,
+    "signal": "New recurring EMI of \u20b929,272/month detected",
+    "old_value": 0,
+    "new_value": 29272,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.430430"
+  },
+  {
+    "customer_id": "SBI10418",
+    "customer_name": "Azad Dash",
+    "age": 31,
+    "city": "Lucknow",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.78,
+    "signal": "New recurring EMI of \u20b929,301/month detected",
+    "old_value": 0,
+    "new_value": 29301,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.375319"
+  },
+  {
+    "customer_id": "SBI10066",
+    "customer_name": "Zashil Apte",
+    "age": 37,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.77,
+    "signal": "New recurring EMI of \u20b928,049/month detected",
+    "old_value": 0,
+    "new_value": 28049,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.355654"
+  },
+  {
+    "customer_id": "SBI10314",
+    "customer_name": "Jalsa Bali",
+    "age": 42,
+    "city": "Chennai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.75,
+    "signal": "New recurring EMI of \u20b924,714/month detected",
+    "old_value": 0,
+    "new_value": 24714,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.295930"
+  },
+  {
+    "customer_id": "SBI10061",
+    "customer_name": "Ubika Raja",
+    "age": 40,
+    "city": "Lucknow",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.74,
+    "signal": "New recurring EMI of \u20b924,090/month detected",
+    "old_value": 0,
+    "new_value": 24090,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.258106"
+  },
+  {
+    "customer_id": "SBI10094",
+    "customer_name": "Jasmit Tara",
+    "age": 43,
+    "city": "Hyderabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.74,
+    "signal": "New recurring EMI of \u20b924,275/month detected",
+    "old_value": 0,
+    "new_value": 24275,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.914548"
+  },
+  {
+    "customer_id": "SBI10217",
+    "customer_name": "Rohan Chacko",
+    "age": 30,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.74,
+    "signal": "New recurring EMI of \u20b923,906/month detected",
+    "old_value": 0,
+    "new_value": 23906,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.349240"
+  },
+  {
+    "customer_id": "SBI10119",
+    "customer_name": "Chanakya Nair",
+    "age": 24,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.73,
+    "signal": "New recurring EMI of \u20b922,474/month detected",
+    "old_value": 0,
+    "new_value": 22474,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.410661"
+  },
+  {
+    "customer_id": "SBI10121",
+    "customer_name": "Bishakha Wali",
+    "age": 53,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 2,
+    "confidence": 0.73,
+    "signal": "New recurring EMI of \u20b921,950/month detected",
+    "old_value": 0,
+    "new_value": 21950,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.450020"
+  },
+  {
+    "customer_id": "SBI10252",
+    "customer_name": "Owen Bora",
+    "age": 35,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.73,
+    "signal": "New recurring EMI of \u20b922,811/month detected",
+    "old_value": 0,
+    "new_value": 22811,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.040713"
+  },
+  {
+    "customer_id": "SBI10419",
+    "customer_name": "Bishakha Bains",
+    "age": 26,
+    "city": "Hyderabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.73,
+    "signal": "New recurring EMI of \u20b922,257/month detected",
+    "old_value": 0,
+    "new_value": 22257,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.395189"
+  },
+  {
+    "customer_id": "SBI10396",
+    "customer_name": "Pahal Barad",
+    "age": 53,
+    "city": "Pune",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.72,
+    "signal": "New recurring EMI of \u20b921,171/month detected",
+    "old_value": 0,
+    "new_value": 21171,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.939584"
+  },
+  {
+    "customer_id": "SBI10254",
+    "customer_name": "Saksham Ahuja",
+    "age": 50,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.71,
+    "signal": "New recurring EMI of \u20b920,034/month detected",
+    "old_value": 0,
+    "new_value": 20034,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.083013"
+  },
+  {
+    "customer_id": "SBI10284",
+    "customer_name": "Ayushman Devan",
+    "age": 22,
+    "city": "Lucknow",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.71,
+    "signal": "New recurring EMI of \u20b919,653/month detected",
+    "old_value": 0,
+    "new_value": 19653,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.701111"
+  },
+  {
+    "customer_id": "SBI10288",
+    "customer_name": "Jacob Mohan",
+    "age": 40,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.7,
+    "signal": "New recurring EMI of \u20b918,556/month detected",
+    "old_value": 0,
+    "new_value": 18556,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.779144"
+  },
+  {
+    "customer_id": "SBI10409",
+    "customer_name": "Dhriti Vala",
+    "age": 30,
+    "city": "Delhi",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.7,
+    "signal": "New recurring EMI of \u20b918,566/month detected",
+    "old_value": 0,
+    "new_value": 18566,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.196129"
+  },
+  {
+    "customer_id": "SBI10164",
+    "customer_name": "Anjali Mani",
+    "age": 26,
+    "city": "Ahmedabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.69,
+    "signal": "New recurring EMI of \u20b916,989/month detected",
+    "old_value": 0,
+    "new_value": 16989,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.307237"
+  },
+  {
+    "customer_id": "SBI10268",
+    "customer_name": "Jagat Khanna",
+    "age": 53,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.68,
+    "signal": "New recurring EMI of \u20b916,597/month detected",
+    "old_value": 0,
+    "new_value": 16597,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.376869"
+  },
+  {
+    "customer_id": "SBI10374",
+    "customer_name": "Jagvi Gokhale",
+    "age": 49,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.68,
+    "signal": "New recurring EMI of \u20b915,716/month detected",
+    "old_value": 0,
+    "new_value": 15716,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.493607"
+  },
+  {
+    "customer_id": "SBI10058",
+    "customer_name": "Bishakha Ahuja",
+    "age": 49,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.66,
+    "signal": "New recurring EMI of \u20b914,253/month detected",
+    "old_value": 0,
+    "new_value": 14253,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.199081"
+  },
+  {
+    "customer_id": "SBI10069",
+    "customer_name": "Janya Deol",
+    "age": 25,
+    "city": "Lucknow",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.66,
+    "signal": "New recurring EMI of \u20b913,771/month detected",
+    "old_value": 0,
+    "new_value": 13771,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.414557"
+  },
+  {
+    "customer_id": "SBI10062",
+    "customer_name": "Aashi Ramanathan",
+    "age": 33,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.65,
+    "signal": "New recurring EMI of \u20b912,868/month detected",
+    "old_value": 0,
+    "new_value": 12868,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.277726"
+  },
+  {
+    "customer_id": "SBI10079",
+    "customer_name": "Yash Yadav",
+    "age": 23,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.65,
+    "signal": "New recurring EMI of \u20b911,967/month detected",
+    "old_value": 0,
+    "new_value": 11967,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.613150"
+  },
+  {
+    "customer_id": "SBI10247",
+    "customer_name": "Lohit Singhal",
+    "age": 33,
+    "city": "Bengaluru",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.65,
+    "signal": "New recurring EMI of \u20b912,877/month detected",
+    "old_value": 0,
+    "new_value": 12877,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.939214"
+  },
+  {
+    "customer_id": "SBI10089",
+    "customer_name": "Nikita Bala",
+    "age": 53,
+    "city": "Delhi",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.64,
+    "signal": "New recurring EMI of \u20b910,860/month detected",
+    "old_value": 0,
+    "new_value": 10860,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:04.813718"
+  },
+  {
+    "customer_id": "SBI10297",
+    "customer_name": "Abdul Dass",
+    "age": 36,
+    "city": "Chennai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.64,
+    "signal": "New recurring EMI of \u20b911,562/month detected",
+    "old_value": 0,
+    "new_value": 11562,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:08.957834"
+  },
+  {
+    "customer_id": "SBI10306",
+    "customer_name": "Janani Aggarwal",
+    "age": 48,
+    "city": "Pune",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.64,
+    "signal": "New recurring EMI of \u20b911,275/month detected",
+    "old_value": 0,
+    "new_value": 11275,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:09.135201"
+  },
+  {
+    "customer_id": "SBI10229",
+    "customer_name": "Kamala Basu",
+    "age": 50,
+    "city": "Kolkata",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 6,
+    "confidence": 0.63,
+    "signal": "New recurring EMI of \u20b99,477/month detected",
+    "old_value": 0,
+    "new_value": 9477,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:07.586267"
+  },
+  {
+    "customer_id": "SBI10366",
+    "customer_name": "Balveer Hans",
+    "age": 28,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.63,
+    "signal": "New recurring EMI of \u20b910,207/month detected",
+    "old_value": 0,
+    "new_value": 10207,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:10.330574"
+  },
+  {
+    "customer_id": "SBI10411",
+    "customer_name": "Vritti Chowdhury",
+    "age": 40,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 4,
+    "confidence": 0.63,
+    "signal": "New recurring EMI of \u20b910,333/month detected",
+    "old_value": 0,
+    "new_value": 10333,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:11.235534"
+  },
+  {
+    "customer_id": "SBI10030",
+    "customer_name": "Yachana Dalal",
+    "age": 28,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.62,
+    "signal": "New recurring EMI of \u20b98,672/month detected",
+    "old_value": 0,
+    "new_value": 8672,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:03.647536"
+  },
+  {
+    "customer_id": "SBI10124",
+    "customer_name": "Falak Naik",
+    "age": 53,
+    "city": "Hyderabad",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.62,
+    "signal": "New recurring EMI of \u20b98,607/month detected",
+    "old_value": 0,
+    "new_value": 8607,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:05.509590"
+  },
+  {
+    "customer_id": "SBI10178",
+    "customer_name": "Dhriti Deo",
+    "age": 44,
+    "city": "Mumbai",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 3,
+    "confidence": 0.62,
+    "signal": "New recurring EMI of \u20b98,342/month detected",
+    "old_value": 0,
+    "new_value": 8342,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:06.582289"
+  },
+  {
+    "customer_id": "SBI10467",
+    "customer_name": "Aachal Prabhu",
+    "age": 36,
+    "city": "Jaipur",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "detected_month": 5,
+    "confidence": 0.62,
+    "signal": "New recurring EMI of \u20b98,701/month detected",
+    "old_value": 0,
+    "new_value": 8701,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "detected_at": "2026-06-20T07:01:12.362828"
+  }
+]
