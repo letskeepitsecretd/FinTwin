@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTwin — Agent Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F1B2D;
+    --ink-soft: #1A2B45;
+    --panel: #F7F5F0;
+    --panel-raised: #FFFFFF;
+    --gold: #D4A24C;
+    --gold-soft: #F0DCB3;
+    --slate: #6B7488;
+    --slate-light: #9AA2B2;
+    --line: #E4E0D6;
+    --high: #C24545;
+    --medium: #D4A24C;
+    --low: #4C8C6E;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--panel);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    background: var(--ink);
+    color: var(--panel);
+    padding: 18px 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .brand-mark {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .brand-sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .topbar-actions { display: flex; align-items: center; gap: 12px; }
+  .btn {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: transform 0.08s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-gold { background: var(--gold); color: var(--ink); }
+  .btn-gold:hover { opacity: 0.92; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--panel);
+    border: 1px solid rgba(247,245,240,0.25);
+  }
+  .btn-ghost:hover { background: rgba(247,245,240,0.08); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: calc(100vh - 64px);
+  }
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: 1fr; height: auto; }
+  }
+
+  /* ---------- Queue ---------- */
+  .queue {
+    background: var(--panel-raised);
+    border-right: 1px solid var(--line);
+    overflow-y: auto;
+    padding: 18px 0;
+  }
+  .queue-header {
+    padding: 0 20px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .queue-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+  }
+  .queue-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--slate-light);
+  }
+  .queue-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-left: 3px solid transparent;
+    padding: 13px 20px;
+    cursor: pointer;
+    transition: background 0.12s ease;
+  }
+  .queue-item:hover { background: var(--panel); }
+  .queue-item.active {
+    background: var(--panel);
+    border-left-color: var(--gold);
+  }
+  .queue-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .queue-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .priority-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .queue-event {
+    font-size: 12px;
+    color: var(--slate);
+  }
+  .empty-queue {
+    padding: 40px 20px;
+    color: var(--slate);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ---------- Detail panel ---------- */
+  .detail { overflow-y: auto; padding: 32px 40px 60px; }
+  .detail-inner { max-width: 760px; }
+
+  .detail-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--slate-light);
+    font-family: var(--font-display);
+    font-size: 18px;
+  }
+
+  .customer-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+  .customer-name {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .customer-id {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--slate);
+    margin-top: 4px;
+  }
+  .priority-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .event-line {
+    margin: 18px 0 28px;
+    padding: 14px 16px;
+    background: var(--panel-raised);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .event-line strong { font-weight: 600; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* ---------- Agent trace timeline (signature element) ---------- */
+  .trace {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 36px;
+  }
+  .trace::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 1.5px;
+    background: var(--line);
+  }
+  .trace-step {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .trace-step:last-child { margin-bottom: 0; }
+  .trace-dot {
+    position: absolute;
+    left: -28px;
+    top: 3px;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: var(--panel-raised);
+    border: 2px solid var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .trace-dot.tool { border-color: var(--gold); }
+  .trace-dot.decision { border-color: var(--low); }
+  .trace-dot.validate { border-color: var(--ink-soft); }
+  .trace-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .trace-label.tool { color: #9A7625; }
+  .trace-body {
+    background: var(--panel-raised);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+  .trace-body.tool-body {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: #FBFAF7;
+  }
+  .trace-kv { display: flex; gap: 6px; margin-bottom: 2px; }
+  .trace-kv:last-child { margin-bottom: 0; }
+  .trace-k { color: var(--slate); white-space: nowrap; }
+  .trace-v { color: var(--ink); }
+
+  /* ---------- Outreach panel ---------- */
+  .outreach-card {
+    background: var(--panel-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .outreach-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .channel-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .revised-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #9A7625;
+  }
+  textarea.outreach-body {
+    width: 100%;
+    min-height: 110px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+  textarea.outreach-body:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: -1px;
+  }
+  .outreach-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-send {
+    background: var(--ink);
+    color: var(--panel);
+  }
+  .btn-send:hover { background: var(--ink-soft); }
+  .btn-skip {
+    background: transparent;
+    color: var(--slate);
+    border: 1px solid var(--line);
+  }
+  .btn-skip:hover { background: var(--panel); }
+  .demo-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--slate-light);
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--ink);
+    color: var(--panel);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    box-shadow: 0 8px 24px rgba(15,27,45,0.25);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  .products-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .product-chip {
+    font-size: 12px;
+    background: var(--gold-soft);
+    color: #6B4E16;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #E2C685;
+  }
+  .product-chip.dropped {
+    background: var(--panel);
+    color: var(--slate-light);
+    border-color: var(--line);
+    text-decoration: line-through;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 140, 110, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(76, 140, 110, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 140, 110, 0); }
+  }
+  .status-dot.active {
+    background: var(--low) !important;
+    animation: pulse 2s infinite;
+  }
+
+  .speed-btn {
+    background: transparent;
+    border: none;
+    color: var(--slate-light);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.12s, color 0.12s;
+  }
+  .speed-btn.active {
+    background: var(--gold) !important;
+    color: var(--ink) !important;
+    font-weight: 600;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-12px); background: rgba(212, 162, 76, 0.25); }
+    to { opacity: 1; transform: translateY(0); background: transparent; }
+  }
+  .queue-item.new-arrival {
+    animation: slideIn 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="brand-mark">FinTwin</span>
+    <span class="brand-sub">Agent Console</span>
+  </div>
+  <div class="topbar-actions">
+    <div style="display:flex;align-items:center;gap:12px;border-right:1px solid rgba(247,245,240,0.15);padding-right:16px;margin-right:4px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="status-dot" id="feed-status-dot" style="width:8px;height:8px;border-radius:50%;background:var(--slate);display:inline-block;transition:background 0.2s;"></span>
+        <span id="feed-status-text" style="font-size:11px;font-family:var(--font-mono);color:var(--slate-light);text-transform:uppercase;letter-spacing:0.04em;">Feed Off</span>
+      </div>
+      <button class="btn btn-ghost" id="feed-toggle-btn" style="padding:6px 12px;font-size:12px;">Start Feed</button>
+      <div class="speed-control" style="display:flex;background:var(--ink-soft);border:1px solid rgba(247,245,240,0.12);border-radius:6px;padding:2px;gap:2px;">
+        <button class="speed-btn active" data-speed="1">1x</button>
+        <button class="speed-btn" data-speed="5">5x</button>
+        <button class="speed-btn" data-speed="20">20x</button>
+      </div>
+    </div>
+    <span id="run-status" style="font-family:var(--font-mono);font-size:12px;color:var(--slate-light);"></span>
+    <button class="btn btn-ghost" id="refresh-btn">Refresh</button>
+    <button class="btn btn-gold" id="run-agent-btn">Run agent</button>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="queue" id="queue">
+    <div class="queue-header">
+      <span class="queue-title">Outreach queue</span>
+      <span class="queue-count" id="queue-count">—</span>
+    </div>
+    <div id="queue-list"></div>
+  </div>
+
+  <div class="detail" id="detail">
+    <div class="detail-empty">Select a customer to view the agent's reasoning</div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PRIORITY_COLOR = { high: 'var(--high)', medium: 'var(--medium)', low: 'var(--low)' };
+const PRIORITY_RANK = { high: 0, medium: 1, low: 2 };
+
+let runs = [];
+let selectedId = null;
+let socket = null;
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+async function loadRuns() {
+  try {
+    const res = await fetch('/api/runs');
+    runs = await res.json();
+    runs.sort((a, b) => (PRIORITY_RANK[a.priority] ?? 3) - (PRIORITY_RANK[b.priority] ?? 3));
+    renderQueue();
+    if (runs.length && !selectedId) {
+      selectedId = runs[0].customer_id;
+      renderDetail();
+    }
+  } catch (e) {
+    document.getElementById('queue-list').innerHTML =
+      `<div class="empty-queue">Could not reach the backend. Make sure <code>python3 server.py</code> is running.</div>`;
+  }
+}
+
+function renderQueue(newArrivalId = null) {
+  const list = document.getElementById('queue-list');
+  document.getElementById('queue-count').textContent = runs.length;
+
+  if (!runs.length) {
+    list.innerHTML = `<div class="empty-queue">No agent runs yet. Click "Run agent" above or start the Live Feed.</div>`;
+    return;
+  }
+
+  list.innerHTML = runs.map(r => {
+    const active = r.customer_id === selectedId ? 'active' : '';
+    const arrivalClass = r.customer_id === newArrivalId ? 'new-arrival' : '';
+    const color = PRIORITY_COLOR[r.priority] || 'var(--slate-light)';
+    return `
+      <button class="queue-item ${active} ${arrivalClass}" data-id="${r.customer_id}">
+        <div class="queue-item-top">
+          <span class="queue-name">${escapeHtml(r.customer_name)}</span>
+          <span class="priority-dot" style="background:${color}"></span>
+        </div>
+        <div class="queue-event">${escapeHtml(r.event_label || '')}</div>
+      </button>
+    `;
+  }).join('');
+
+  list.querySelectorAll('.queue-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedId = btn.dataset.id;
+      renderQueue();
+      renderDetail();
+    });
+  });
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s ?? '';
+  return d.innerHTML;
+}
+
+function traceStepHtml(step) {
+  if (step.step === 'start') return '';
+
+  if (step.step === 'tool_call') {
+    const result = step.result || {};
+    const kvs = Object.entries(result).map(([k, v]) => {
+      const val = Array.isArray(v) ? (v.length ? v.join('; ') : 'none') : String(v);
+      return `<div class="trace-kv"><span class="trace-k">${escapeHtml(k)}:</span><span class="trace-v">${escapeHtml(val)}</span></div>`;
+    }).join('');
+    return `
+      <div class="trace-step">
+        <div class="trace-dot tool"></div>
+        <div class="trace-label tool">Tool called → ${escapeHtml(step.tool)}</div>
+        <div class="trace-body tool-body">${kvs}</div>
+      </div>
+    `;
+  }
+
+  if (step.step === 'decision') {
+    const r = step.result || {};
+    return `
+      <div class="trace-step">
+        <div class="trace-dot decision"></div>
+        <div class="trace-label">Decision</div>
+        <div class="trace-body">${escapeHtml(r.reasoning || '')}</div>
+      </div>
+    `;
+  }
+
+  if (step.step === 'draft') {
+    return `
+      <div class="trace-step">
+        <div class="trace-dot"></div>
+        <div class="trace-label">Drafted outreach</div>
+        <div class="trace-body">Message drafted for ${escapeHtml(step.result?.channel || 'sms')} channel.</div>
+      </div>
+    `;
+  }
+
+  if (step.step === 'validate') {
+    const r = step.result || {};
+    const issueText = (r.issues && r.issues.length)
+      ? `Issues found and corrected: ${r.issues.join('; ')}`
+      : 'No compliance issues found.';
+    return `
+      <div class="trace-step">
+        <div class="trace-dot validate"></div>
+        <div class="trace-label">Compliance check</div>
+        <div class="trace-body">${escapeHtml(issueText)}</div>
+      </div>
+    `;
+  }
+
+  return '';
+}
+
+function renderDetail() {
+  const run = runs.find(r => r.customer_id === selectedId);
+  const detail = document.getElementById('detail');
+  if (!run) {
+    detail.innerHTML = `<div class="detail-empty">Select a customer to view the agent's reasoning</div>`;
+    return;
+  }
+
+  const color = PRIORITY_COLOR[run.priority] || 'var(--slate-light)';
+  const colorBg = (run.priority === 'high') ? 'rgba(194,69,69,0.12)'
+    : (run.priority === 'low') ? 'rgba(76,140,110,0.12)'
+    : 'rgba(212,162,76,0.15)';
+
+  const finalProducts = run.final_products || [];
+  const candidateProducts = (run.candidate_products || []).map(p => p.name);
+  const productsHtml = candidateProducts.map(name => {
+    const dropped = !finalProducts.includes(name);
+    return `<span class="product-chip ${dropped ? 'dropped' : ''}">${escapeHtml(name)}</span>`;
+  }).join('');
+
+  const traceHtml = (run.trace || []).map(traceStepHtml).join('');
+
+  const outreach = run.outreach || {};
+  const channel = outreach.channel || 'sms';
+
+  detail.innerHTML = `
+    <div class="detail-inner">
+      <div class="customer-header">
+        <div>
+          <div class="customer-name">${escapeHtml(run.customer_name)}</div>
+          <div class="customer-id">${escapeHtml(run.customer_id)}</div>
+        </div>
+        <span class="priority-badge" style="color:${color};background:${colorBg}">${escapeHtml(run.priority || 'unknown')}</span>
+      </div>
+ 
+      <div class="event-line">
+        <strong>${escapeHtml(run.event_label || '')}</strong> — ${escapeHtml(run.signal || '')}
+        ${run.confidence ? ` · confidence ${Math.round(run.confidence * 100)}%` : ''}
+      </div>
+
+      <div class="section-label">Candidate products (struck through = dropped by agent)</div>
+      <div class="products-list">${productsHtml || '<span style="color:var(--slate-light);font-size:13px;">None</span>'}</div>
+
+      <div class="section-label">Agent reasoning trace</div>
+      <div class="trace">${traceHtml}</div>
+
+      <div class="section-label">Outreach draft</div>
+      <div class="outreach-card">
+        <div class="outreach-meta">
+          <span class="channel-tag">${escapeHtml(channel)}</span>
+          ${outreach.was_revised ? '<span class="revised-tag">⚑ revised after compliance check</span>' : ''}
+        </div>
+        ${channel === 'email' && outreach.subject ? `<div style="margin-bottom:10px;font-size:13px;"><strong>Subject:</strong> ${escapeHtml(outreach.subject)}</div>` : ''}
+        <textarea class="outreach-body" id="outreach-text">${escapeHtml(outreach.body || '')}</textarea>
+        <div class="outreach-actions">
+          <button class="btn btn-send" id="send-btn">Approve &amp; send</button>
+          <button class="btn btn-skip" id="skip-btn">Skip for now</button>
+        </div>
+        <div class="demo-note">Demo mode — no message is actually sent. Wire to Twilio/SendGrid for live delivery.</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('send-btn').addEventListener('click', () => showToast(`Marked as sent to ${run.customer_name} (demo mode)`));
+  document.getElementById('skip-btn').addEventListener('click', () => showToast(`Skipped ${run.customer_name}`));
+}
+
+// WebSocket Connection Management
+function connectWebSocket() {
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const wsUrl = `${protocol}//${window.location.host}/ws`;
+  console.log(`[WS] Connecting to ${wsUrl}...`);
+  socket = new WebSocket(wsUrl);
+
+  socket.onmessage = function(event) {
+    try {
+      const newRun = JSON.parse(event.data);
+      console.log("[WS] Received new agent run:", newRun);
+
+      const existingIdx = runs.findIndex(r => r.customer_id === newRun.customer_id);
+      let isNew = false;
+      if (existingIdx !== -1) {
+        runs[existingIdx] = newRun;
+      } else {
+        runs.unshift(newRun);
+        isNew = true;
+      }
+
+      // Re-sort runs to keep priority grouping neat on prepends
+      runs.sort((a, b) => (PRIORITY_RANK[a.priority] ?? 3) - (PRIORITY_RANK[b.priority] ?? 3));
+
+      renderQueue(isNew ? newRun.customer_id : null);
+
+      if (!selectedId) {
+        selectedId = newRun.customer_id;
+        renderDetail();
+      } else if (selectedId === newRun.customer_id) {
+        renderDetail();
+      }
+
+      showToast(`Agent processed outreach for ${newRun.customer_name}`);
+    } catch (e) {
+      console.error("[WS] Error parsing WebSocket message:", e);
+    }
+  };
+
+  socket.onclose = function(e) {
+    console.log('[WS] Connection closed. Reconnecting in 3 seconds...', e.reason);
+    setTimeout(connectWebSocket, 3000);
+  };
+
+  socket.onerror = function(err) {
+    console.error('[WS] Connection error. Closing socket...', err);
+    socket.close();
+  };
+}
+
+// Live Feed UI Control Helpers
+function updateFeedUI(status) {
+  const dot = document.getElementById('feed-status-dot');
+  const text = document.getElementById('feed-status-text');
+  const btn = document.getElementById('feed-toggle-btn');
+
+  if (status.running) {
+    dot.classList.add('active');
+    text.textContent = `watching (${status.speed}x)`;
+    text.style.color = 'var(--low)';
+    btn.textContent = 'Stop Feed';
+    btn.classList.add('btn-gold');
+    btn.classList.remove('btn-ghost');
+  } else {
+    dot.classList.remove('active');
+    text.textContent = 'feed off';
+    text.style.color = 'var(--slate-light)';
+    btn.textContent = 'Start Feed';
+    btn.classList.add('btn-ghost');
+    btn.classList.remove('btn-gold');
+  }
+
+  document.querySelectorAll('.speed-btn').forEach(b => {
+    if (parseInt(b.dataset.speed) === status.speed) {
+      b.classList.add('active');
+    } else {
+      b.classList.remove('active');
+    }
+  });
+}
+
+async function checkFeedStatus() {
+  try {
+    const res = await fetch('/api/feed/status');
+    const status = await res.json();
+    updateFeedUI(status);
+  } catch (e) {
+    console.error('Error fetching feed status:', e);
+  }
+}
+
+// Event Listeners for Live Feed controls
+document.getElementById('feed-toggle-btn').addEventListener('click', async () => {
+  const btn = document.getElementById('feed-toggle-btn');
+  const running = btn.textContent.trim() === 'Stop Feed';
+  const endpoint = running ? '/api/feed/stop' : '/api/feed/start';
+
+  try {
+    const res = await fetch(endpoint, { method: 'POST' });
+    const status = await res.json();
+    updateFeedUI(status);
+    showToast(running ? 'Live feed stopped' : 'Live feed started');
+  } catch (e) {
+    showToast('Error toggling live feed');
+  }
+});
+
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.addEventListener('click', async (e) => {
+    const speed = parseInt(e.target.dataset.speed);
+    try {
+      const res = await fetch('/api/feed/speed', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ speed: speed })
+      });
+      const status = await res.json();
+      updateFeedUI(status);
+      showToast(`Feed speed set to ${speed}x`);
+    } catch (e) {
+      showToast('Error updating speed');
+    }
+  });
+});
+
+document.getElementById('refresh-btn').addEventListener('click', loadRuns);
+
+document.getElementById('run-agent-btn').addEventListener('click', async (e) => {
+  const btn = e.target;
+  const status = document.getElementById('run-status');
+  btn.disabled = true;
+  btn.textContent = 'Running…';
+  status.textContent = 'Agent is investigating, deciding, drafting, validating…';
+
+  try {
+    const res = await fetch('/api/run-agent', { method: 'POST' });
+    const data = await res.json();
+    if (data.success) {
+      status.textContent = 'Run complete.';
+      showToast('Agent run finished');
+      await loadRuns();
+    } else {
+      status.textContent = 'Run failed — check terminal.';
+      showToast('Agent run failed, see server logs');
+    }
+  } catch (e) {
+    status.textContent = 'Could not reach backend.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Run agent';
+    setTimeout(() => status.textContent = '', 4000);
+  }
+});
+
+// Init on load
+loadRuns();
+checkFeedStatus();
+connectWebSocket();
+</script>
+
+</body>
+</html>

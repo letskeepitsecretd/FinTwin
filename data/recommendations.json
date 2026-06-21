@@ -1,0 +1,452 @@
+[
+  {
+    "customer_id": "SBI10004",
+    "customer_name": "Ekbal Narayanan",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "signal": "Salary increased from ₹24,204 to ₹49,378 (104% jump)",
+    "confidence": 0.98,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP — Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "ai_reasoning": "With a 104% salary increase to ₹49,378, Ekbal Narayanan's financial situation has improved significantly, making him an ideal candidate for upgrading his SBI Salary Account to better manage his increased income and for considering investments like SBI SIP — Magnum Equity Fund to grow his savings of ₹50,082. A pre-approved SBI Personal Loan can also provide him with a financial safety net or fund new goals. His increased income can support loan repayments.",
+    "priority": "high",
+    "priority_reason": "Significant salary increase indicates a high likelihood of needing upgraded financial services",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Ekbal, congratulations on your salary increase to ₹49,378! We can help you make the most of it with a Salary Account upgrade, pre-approved loan, or investment options like SBI SIP. Let's discuss how to grow your ₹50,082 savings further."
+    }
+  },
+  {
+    "customer_id": "SBI10013",
+    "customer_name": "Omaja Dixit",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "signal": "Cumulative savings approaching ₹100,000 milestone",
+    "confidence": 0.96,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund — Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "ai_reasoning": "Omaja Dixit's savings balance of ₹109700 indicates a disciplined approach to saving, making her a strong candidate for investment products like SBI Fixed Deposit (High Yield) and SBI Mutual Fund — Bluechip, while SBI Life Smart Wealth Plan can provide a safety net. With no existing EMI, Omaja has the financial bandwidth to explore these options. Her cumulative savings approaching ₹100,000 milestone demonstrates her ability to build wealth.",
+    "priority": "high",
+    "priority_reason": "Customer has just reached a significant savings milestone",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Omaja, congratulations on reaching ₹100,000 in savings. Consider growing your wealth with our high-yield fixed deposit or mutual funds. Let's discuss."
+    }
+  },
+  {
+    "customer_id": "SBI10005",
+    "customer_name": "Lakshmi Palla",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "signal": "New recurring EMI of ₹39,592/month detected",
+    "confidence": 0.87,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "ai_reasoning": "Lakshmi Palla's new recurring EMI of ₹39,592/month is a significant financial commitment, and the SBI Home Loan Balance Transfer can help her manage this EMI by potentially lowering her interest rate. The SBI Loan Protection Insurance can provide a safety net in case she's unable to pay her EMI, considering her base salary is ₹47,571. The SBI Overdraft Facility can also provide her with an additional credit limit to meet any unexpected expenses.",
+    "priority": "high",
+    "priority_reason": "High EMI amount relative to income",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Lakshmi, noticed your new EMI of ₹39,592/month. We can help you manage it with our Home Loan Balance Transfer and Loan Protection Insurance. Let's discuss how to make your payments more manageable."
+    }
+  },
+  {
+    "customer_id": "SBI10015",
+    "customer_name": "Ikbal Malhotra",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "signal": "Salary increased from ₹32,140 to ₹62,434 (94% jump)",
+    "confidence": 0.98,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP — Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "ai_reasoning": "Ikbal Malhotra's 94% salary increase to ₹62,434 from ₹32,140 makes him an ideal candidate for an SBI Salary Account Upgrade, which can offer better benefits and features. The SBI Personal Loan (Pre-approved) can help him address any immediate financial needs, and the SBI SIP — Magnum Equity Fund can assist in investing his increased income. His savings balance of ₹83,104 also indicates a potential for investments.",
+    "priority": "high",
+    "priority_reason": "The customer's significant salary increase presents a timely opportunity for upselling and cross-selling relevant products.",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Ikbal, congratulations on your new job and salary increase. We'd like to help you make the most of it with our exclusive offerings. Let's discuss how an upgraded salary account, pre-approved loan, or investment options can benefit you."
+    }
+  },
+  {
+    "customer_id": "SBI10141",
+    "customer_name": "Ayush Nath",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "signal": "Cumulative savings approaching ₹100,000 milestone",
+    "confidence": 0.96,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund — Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "ai_reasoning": "Ayush Nath's savings balance of ₹484027 indicates a significant amount of disposable income, making the SBI Fixed Deposit (High Yield) and SBI Mutual Fund — Bluechip suitable for growth. The SBI Life Smart Wealth Plan provides an added layer of security. With a base salary of ₹159210, Ayush can afford to allocate a portion of his income towards these investments.",
+    "priority": "high",
+    "priority_reason": "The customer has reached a significant savings milestone",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Congratulations Ayush on reaching a savings milestone. Consider growing your wealth with our high-yield fixed deposit or mutual funds. Let's discuss the best options for you."
+    }
+  },
+  {
+    "customer_id": "SBI10313",
+    "customer_name": "Hemal Dayal",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "signal": "New recurring EMI of ₹39,792/month detected",
+    "confidence": 0.87,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "ai_reasoning": "Hemal Dayal's new recurring EMI of ₹39,792/month is a significant financial commitment, and the SBI Home Loan Balance Transfer can help him manage this expense by potentially lowering his monthly payments. The SBI Loan Protection Insurance can provide a safety net in case of unforeseen events, and the SBI Overdraft Facility can offer additional liquidity. Given Hemal's savings balance of ₹71,046, these products can help him navigate his new financial obligations.",
+    "priority": "high",
+    "priority_reason": "New EMI is 185% of customer's base salary",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Hemal, noticed your new EMI of ₹39,792. Considering SBI Home Loan Balance Transfer or Loan Protection Insurance to help manage your finances. Let's discuss options."
+    }
+  },
+  {
+    "customer_id": "SBI10016",
+    "customer_name": "Ayush Seshadri",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "signal": "Salary increased from ₹233,125 to ₹603,785 (159% jump)",
+    "confidence": 0.98,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP — Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "ai_reasoning": "Ayush Seshadri's 159% salary jump to ₹603,785 presents an opportunity to upgrade his Salary Account, consider a Personal Loan for large purchases, and invest in SBI SIP — Magnum Equity Fund to grow his ₹719825 savings. His increased income and lack of existing EMI suggest he can handle additional financial commitments. The SBI Salary Account Upgrade can help him manage his new income efficiently.",
+    "priority": "high",
+    "priority_reason": "Significant salary increase with high confidence",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Ayush, congratulations on your new job and salary hike to ₹603,785! Let's discuss how to make the most of it with our tailored financial solutions. Would you like to explore upgrading your Salary Account or other options?"
+    }
+  },
+  {
+    "customer_id": "SBI10200",
+    "customer_name": "Urishilla Narain",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "signal": "Cumulative savings approaching ₹100,000 milestone",
+    "confidence": 0.96,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund — Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "ai_reasoning": "Urishilla Narain's savings balance of ₹171457 is approaching a significant milestone, making it an ideal time to consider investing in SBI Fixed Deposit (High Yield) or SBI Mutual Fund — Bluechip to grow her wealth, and SBI Life Smart Wealth Plan to ensure her savings are protected. With a base salary of ₹188690, she has the financial capacity to invest. Her lack of existing EMI also means she can allocate funds towards these investments.",
+    "priority": "high",
+    "priority_reason": "Customer is nearing a significant savings milestone",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Urishilla, congratulations on reaching a savings milestone. Consider growing your ₹171457 with our high-yield FD or mutual funds, and protect it with SBI Life Smart Wealth Plan. Let's discuss."
+    }
+  },
+  {
+    "customer_id": "SBI10060",
+    "customer_name": "Gautami Ratti",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "signal": "New recurring EMI of ₹38,666/month detected",
+    "confidence": 0.86,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "ai_reasoning": "Gautami Ratti's new EMI of ₹38,666/month is a significant financial commitment, and the SBI Home Loan Balance Transfer can help her reduce her monthly burden by potentially offering a lower interest rate. The SBI Loan Protection Insurance can provide a safety net in case she's unable to pay her EMI, and the SBI Overdraft Facility can offer her additional liquidity. With her savings balance of ₹162455, she may be able to leverage these products to better manage her finances.",
+    "priority": "high",
+    "priority_reason": "New EMI is a significant portion of her base salary",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Gautami, noticed your new EMI of ₹38,666/month. We can help you manage it better with our Home Loan Balance Transfer, Loan Protection Insurance, and Overdraft Facility. Let's discuss how to make your finances more manageable."
+    }
+  },
+  {
+    "customer_id": "SBI10025",
+    "customer_name": "Urishilla Sampath",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "signal": "Salary increased from ₹34,260 to ₹62,251 (82% jump)",
+    "confidence": 0.98,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP — Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "ai_reasoning": "Urishilla Sampath's 82% salary jump from ₹34,260 to ₹62,251 presents an opportunity to upgrade her SBI Salary Account and consider investments like SBI SIP — Magnum Equity Fund to grow her savings of ₹13,392. A pre-approved SBI Personal Loan can also provide liquidity for any immediate needs. These products align with her increased financial capacity.",
+    "priority": "high",
+    "priority_reason": "Recent significant salary increase",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Urishilla, congratulations on your new job and salary increase. We'd like to help you make the most of it. Consider upgrading your SBI Salary Account and exploring investment options like SBI SIP. Let's discuss how we can support your new financial goals."
+    }
+  },
+  {
+    "customer_id": "SBI10240",
+    "customer_name": "Yauvani Sani",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "signal": "Cumulative savings approaching ₹100,000 milestone",
+    "confidence": 0.96,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund — Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "ai_reasoning": "Yauvani Sani's savings balance of ₹82649 is approaching the ₹100,000 milestone, making it an ideal time to consider investments like SBI Fixed Deposit (High Yield) or SBI Mutual Fund — Bluechip to grow her wealth, while SBI Life Smart Wealth Plan can provide a safety net, given her base salary of ₹146237 and no existing EMI",
+    "priority": "high",
+    "priority_reason": "Customer is nearing a significant savings milestone",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Yauvani, congratulations on nearing ₹100,000 in savings. Consider growing your wealth with our high-yield investments or safeguarding your future with a smart wealth plan. Let's discuss options tailored to you."
+    }
+  },
+  {
+    "customer_id": "SBI10160",
+    "customer_name": "Anamika Oza",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "signal": "New recurring EMI of ₹39,178/month detected",
+    "confidence": 0.86,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "ai_reasoning": "Anamika Oza's new recurring EMI of ₹39,178/month significantly increases her monthly financial commitments, making SBI Home Loan Balance Transfer a suitable option to potentially lower her existing EMI of ₹7835, while SBI Loan Protection Insurance can provide a safety net and SBI Overdraft Facility offers additional liquidity. Her savings balance of ₹33305 and base salary of ₹27080 indicate a need for prudent financial management. The new EMI may strain her finances, necessitating these products.",
+    "priority": "high",
+    "priority_reason": "The significant increase in monthly EMI poses an immediate financial strain.",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Anamika, noticed your new EMI of ₹39178. We can help you manage this with our Home Loan Balance Transfer, Loan Protection Insurance, and Overdraft Facility. Let's discuss how to make this work for you."
+    }
+  },
+  {
+    "customer_id": "SBI10063",
+    "customer_name": "Gayathri Kanda",
+    "event_type": "salary_jump",
+    "event_label": "New Job Detected",
+    "signal": "Salary increased from ₹79,637 to ₹223,812 (181% jump)",
+    "confidence": 0.98,
+    "recommended_products": [
+      {
+        "name": "SBI Salary Account Upgrade",
+        "type": "account"
+      },
+      {
+        "name": "SBI Personal Loan (Pre-approved)",
+        "type": "loan"
+      },
+      {
+        "name": "SBI SIP — Magnum Equity Fund",
+        "type": "investment"
+      }
+    ],
+    "ai_reasoning": "Gayathri Kanda's 181% salary jump from ₹79,637 to ₹223,812 presents an opportunity to upgrade her SBI Salary Account, consider a pre-approved personal loan, and invest in the SBI SIP — Magnum Equity Fund to grow her ₹230,385 savings. The significant increase in salary can support loan repayments and investments. These products can help her manage and grow her finances effectively.",
+    "priority": "high",
+    "priority_reason": "Significant salary increase indicates a high potential for upgrading financial products",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Gayathri, congratulations on your new job and significant salary increase. We can help you make the most of it with our tailored financial solutions. Let's discuss how to upgrade your SBI Salary Account, a pre-approved personal loan, or investment options like SBI SIP — Magnum Equity Fund. Best, Your SBI Relationship Manager"
+    }
+  },
+  {
+    "customer_id": "SBI10312",
+    "customer_name": "Girish Barman",
+    "event_type": "savings_milestone",
+    "event_label": "Savings Milestone Reached",
+    "signal": "Cumulative savings approaching ₹100,000 milestone",
+    "confidence": 0.96,
+    "recommended_products": [
+      {
+        "name": "SBI Fixed Deposit (High Yield)",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Mutual Fund — Bluechip",
+        "type": "investment"
+      },
+      {
+        "name": "SBI Life Smart Wealth Plan",
+        "type": "insurance"
+      }
+    ],
+    "ai_reasoning": "Girish Barman's savings balance of ₹199128 indicates a strong ability to save, making SBI Fixed Deposit (High Yield) and SBI Mutual Fund — Bluechip suitable investments to grow his wealth. The SBI Life Smart Wealth Plan can provide a safety net, considering his existing EMI obligations, although the amount is currently ₹0. His age and income of ₹52020 also suggest a long-term investment horizon.",
+    "priority": "high",
+    "priority_reason": "Customer has reached a significant savings milestone",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Girish, congratulations on reaching a savings milestone. Consider growing your wealth with our high-yield investments. Let's discuss how SBI can help you achieve your goals."
+    }
+  },
+  {
+    "customer_id": "SBI10358",
+    "customer_name": "Tamanna Gara",
+    "event_type": "new_emi",
+    "event_label": "New Financial Commitment",
+    "signal": "New recurring EMI of ₹37,446/month detected",
+    "confidence": 0.85,
+    "recommended_products": [
+      {
+        "name": "SBI Home Loan Balance Transfer",
+        "type": "loan"
+      },
+      {
+        "name": "SBI Loan Protection Insurance",
+        "type": "insurance"
+      },
+      {
+        "name": "SBI Overdraft Facility",
+        "type": "credit"
+      }
+    ],
+    "ai_reasoning": "The detected EMI of ₹37,446/month is significantly higher than Tamanna Gara's base salary of ₹24,524, indicating a potential strain on her finances. The SBI Home Loan Balance Transfer and SBI Overdraft Facility can help her manage this new financial commitment, while the SBI Loan Protection Insurance provides a safety net. Given her existing savings balance of ₹96,089, she may be able to leverage these products to better manage her finances.",
+    "priority": "high",
+    "priority_reason": "High EMI amount relative to income",
+    "outreach": {
+      "channel": "sms",
+      "subject": "",
+      "body": "Hi Tamanna, noticed your new EMI of ₹37,446/month. We can help you manage this with our Home Loan Balance Transfer, Overdraft Facility, or Loan Protection Insurance. Let's discuss how to make this work for you."
+    }
+  }
+]

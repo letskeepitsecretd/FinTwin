@@ -127,6 +127,82 @@ def detect_savings_milestone(savings_series, milestones=[100000, 200000, 500000]
 
 # ---------- Main detector ----------
 
+def detect_customer_events(df_customer, c):
+    """
+    Runs event detection rules for a single customer's transactions.
+    df_customer: DataFrame containing transactions ONLY for this customer.
+    c: customer profile dictionary.
+    """
+    detected = []
+    cid = c.get("customer_id")
+    if not cid:
+        return detected
+
+    # Helper to group by month
+    salary_series = df_customer[df_customer["category"] == "salary"].groupby("month")["amount"].sum()
+    emi_series    = df_customer[df_customer["category"] == "emi"].groupby("month")["amount"].sum()
+    sav_series    = df_customer[df_customer["category"] == "savings_transfer"].groupby("month")["amount"].sum()
+
+    # --- Salary jump ---
+    found, month, conf, old_sal, new_sal = detect_salary_jump(salary_series)
+    if found and conf >= 0.65:
+        detected.append({
+            "customer_id": cid,
+            "customer_name": c.get("name", "Unknown"),
+            "age": c.get("age"),
+            "city": c.get("city"),
+            "event_type": "salary_jump",
+            "event_label": "New Job Detected",
+            "detected_month": int(month),
+            "confidence": conf,
+            "signal": f"Salary increased from ₹{old_sal:,} to ₹{new_sal:,} ({round((new_sal-old_sal)/old_sal*100)}% jump)",
+            "old_value": old_sal,
+            "new_value": new_sal,
+            "recommended_products": SBI_PRODUCTS["salary_jump"],
+            "detected_at": datetime.now().isoformat(),
+        })
+
+    # --- New EMI ---
+    found, month, conf, emi_amt = detect_new_emi(emi_series)
+    if found and conf >= 0.60:
+        detected.append({
+            "customer_id": cid,
+            "customer_name": c.get("name", "Unknown"),
+            "age": c.get("age"),
+            "city": c.get("city"),
+            "event_type": "new_emi",
+            "event_label": "New Financial Commitment",
+            "detected_month": int(month),
+            "confidence": conf,
+            "signal": f"New recurring EMI of ₹{emi_amt:,}/month detected",
+            "old_value": 0,
+            "new_value": emi_amt,
+            "recommended_products": SBI_PRODUCTS["new_emi"],
+            "detected_at": datetime.now().isoformat(),
+        })
+
+    # --- Savings milestone ---
+    found, month, conf, milestone = detect_savings_milestone(sav_series)
+    if found and conf >= 0.70:
+        detected.append({
+            "customer_id": cid,
+            "customer_name": c.get("name", "Unknown"),
+            "age": c.get("age"),
+            "city": c.get("city"),
+            "event_type": "savings_milestone",
+            "event_label": "Savings Milestone Reached",
+            "detected_month": int(month),
+            "confidence": conf,
+            "signal": f"Cumulative savings approaching ₹{milestone:,} milestone",
+            "old_value": 0,
+            "new_value": milestone,
+            "recommended_products": SBI_PRODUCTS["savings_milestone"],
+            "detected_at": datetime.now().isoformat(),
+        })
+
+    return detected
+
+
 def detect_all_events(df, customers):
     detected = []
     customer_ids = df["customer_id"].unique()
@@ -135,66 +211,8 @@ def detect_all_events(df, customers):
 
     for cid in customer_ids:
         c = customers.get(cid, {})
-        salary_series = get_monthly_salary(df, cid)
-        emi_series    = get_monthly_emi(df, cid)
-        sav_series    = get_monthly_savings(df, cid)
-
-        # --- Salary jump ---
-        found, month, conf, old_sal, new_sal = detect_salary_jump(salary_series)
-        if found and conf >= 0.65:
-            detected.append({
-                "customer_id": cid,
-                "customer_name": c.get("name", "Unknown"),
-                "age": c.get("age"),
-                "city": c.get("city"),
-                "event_type": "salary_jump",
-                "event_label": "New Job Detected",
-                "detected_month": int(month),
-                "confidence": conf,
-                "signal": f"Salary increased from ₹{old_sal:,} to ₹{new_sal:,} ({round((new_sal-old_sal)/old_sal*100)}% jump)",
-                "old_value": old_sal,
-                "new_value": new_sal,
-                "recommended_products": SBI_PRODUCTS["salary_jump"],
-                "detected_at": datetime.now().isoformat(),
-            })
-
-        # --- New EMI ---
-        found, month, conf, emi_amt = detect_new_emi(emi_series)
-        if found and conf >= 0.60:
-            detected.append({
-                "customer_id": cid,
-                "customer_name": c.get("name", "Unknown"),
-                "age": c.get("age"),
-                "city": c.get("city"),
-                "event_type": "new_emi",
-                "event_label": "New Financial Commitment",
-                "detected_month": int(month),
-                "confidence": conf,
-                "signal": f"New recurring EMI of ₹{emi_amt:,}/month detected",
-                "old_value": 0,
-                "new_value": emi_amt,
-                "recommended_products": SBI_PRODUCTS["new_emi"],
-                "detected_at": datetime.now().isoformat(),
-            })
-
-        # --- Savings milestone ---
-        found, month, conf, milestone = detect_savings_milestone(sav_series)
-        if found and conf >= 0.70:
-            detected.append({
-                "customer_id": cid,
-                "customer_name": c.get("name", "Unknown"),
-                "age": c.get("age"),
-                "city": c.get("city"),
-                "event_type": "savings_milestone",
-                "event_label": "Savings Milestone Reached",
-                "detected_month": int(month),
-                "confidence": conf,
-                "signal": f"Cumulative savings approaching ₹{milestone:,} milestone",
-                "old_value": 0,
-                "new_value": milestone,
-                "recommended_products": SBI_PRODUCTS["savings_milestone"],
-                "detected_at": datetime.now().isoformat(),
-            })
+        df_cust = df[df["customer_id"] == cid]
+        detected.extend(detect_customer_events(df_cust, c))
 
     # Sort by confidence descending
     detected.sort(key=lambda x: x["confidence"], reverse=True)
