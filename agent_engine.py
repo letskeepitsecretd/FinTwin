@@ -119,6 +119,24 @@ def get_risk_flags(customer: dict, event: dict) -> dict:
     return {"flags": flags, "flag_count": len(flags)}
 
 
+from rag_engine import search_product_policy as _search_product_policy
+
+def search_product_policy_tool(query: str) -> dict:
+    results = _search_product_policy(query, top_k=2)
+    return {
+        "results": [
+            {
+                "product": r["product_name"],
+                "section": r["section_name"],
+                "content": r["text"],
+                "relevance": round(r["similarity_score"], 3)
+            }
+            for r in results
+        ],
+        "note": "Retrieved from local SBI product knowledge base (illustrative/synthetic rates)"
+    }
+
+
 TOOLS_SCHEMA = [
     {
         "type": "function",
@@ -144,12 +162,30 @@ TOOLS_SCHEMA = [
             "parameters": {"type": "object", "properties": {}, "required": []},
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_product_policy",
+            "description": "Search the SBI product knowledge base for eligibility criteria, interest rates, tenure limits, fees, and age restrictions for a specific product or customer situation. Call this before recommending any specific product to ground your recommendation in actual policy, not just general knowledge.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Natural language query describing what you need to know, e.g. 'personal loan eligibility for a 28 year old with existing EMI' or 'fixed deposit interest rates for senior citizen'"
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    }
 ]
 
 TOOL_FUNCTIONS = {
     "check_existing_products": check_existing_products,
     "calculate_affordability": calculate_affordability,
     "get_risk_flags": get_risk_flags,
+    "search_product_policy": search_product_policy_tool,
 }
 
 
@@ -191,8 +227,10 @@ INVESTIGATE_SYSTEM_PROMPT = """You are an AI agent for SBI relationship managers
 event has been detected. Before recommending anything, investigate the customer's real financial \
 situation using the tools available to you. Call whichever tools are relevant — you don't need to \
 call all of them if the situation is simple, but for anything involving a loan or investment \
-recommendation, check affordability and existing products first. Once you have enough information, \
-respond with your final decision as JSON (no markdown fences) in this exact shape:
+recommendation, check affordability and existing products first. Use search_product_policy to look \
+up actual product eligibility criteria, rates, and restrictions before recommending any specific \
+product — this grounds your recommendation in real policy rather than general knowledge. Once you \
+have enough information, respond with your final decision as JSON (no markdown fences) in this exact shape:
 {
   "reasoning": "2-3 sentences explaining the recommendation, grounded in what you found from your tool calls — reference actual numbers",
   "priority": "high | medium | low",
@@ -252,6 +290,12 @@ def run_investigate_decide(event: dict, customer: dict, trace: list) -> dict:
                 fn = TOOL_FUNCTIONS.get(fn_name)
                 if fn_name == "get_risk_flags":
                     result = fn(customer, event)
+                elif fn_name == "search_product_policy":
+                    try:
+                        args = json.loads(tc.function.arguments or "{}")
+                        result = fn(**args)
+                    except Exception as e:
+                        result = {"error": f"failed to call search_product_policy: {e}"}
                 else:
                     result = fn(customer) if fn else {"error": f"unknown tool {fn_name}"}
 
