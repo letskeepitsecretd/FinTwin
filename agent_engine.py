@@ -342,15 +342,20 @@ Respond ONLY with JSON, no markdown fences:
 # ---------------------------------------------------------------------------
 
 VALIDATE_PROMPT = """You are a compliance reviewer for an Indian bank's customer outreach messages. \
-Review the message below for issues: guaranteed-return language (e.g. "guaranteed profit"), false \
-urgency/pressure tactics, promises the bank can't legally make, or factually unsupported claims.
+Review the message below for compliance violations and flag/revise them if present.
 
-Message: "{body}"
+Compliance Rules:
+1. NO Guaranteed Returns or Assured Growth: Do not allow phrases like "guaranteed profit", "assured returns", "risk-free", "certain gains", or promising specific future percentage yields for investment, equity, mutual fund, or insurance products.
+2. NO False Urgency or Pressure: Do not allow pressuring the customer with artificial deadlines (e.g., "within 5 minutes", "by end of day today") or threatening negative consequences like "account closure", "penalties", or "loss of benefits" unless contractually mandated.
+3. NO Exaggerated or Misleading Promises: Do not allow claims of making the customer a "millionaire", doubling their wealth quickly, or factually unsupported performance statements.
+4. Professional & Honest Tone: Ensure all claims are balanced, clear, and refer the customer to official terms.
+
+Message to review: "{body}"
 
 Respond ONLY with JSON, no markdown fences:
 {{
   "compliant": true or false,
-  "issues": ["list any issues found, empty list if none"],
+  "issues": ["list any compliance issues found, empty list if none"],
   "revised_body": "if not compliant, a corrected version. If compliant, repeat the original body unchanged."
 }}"""
 
