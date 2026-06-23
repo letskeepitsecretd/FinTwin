@@ -164,6 +164,46 @@ async def agent_worker_loop():
             await manager.broadcast(result)
             print(f"[Agent Worker] Successfully processed {cid}. Cooldown starts.")
             
+            # 5. Auto-send: high priority + compliance clean = send without human intervention
+            priority = (result.get("priority") or "").lower()
+            was_revised = result.get("outreach", {}).get("was_revised", True)
+            if priority == "high" and not was_revised:
+                try:
+                    import httpx
+                    N8N_WEBHOOK_URL = "http://localhost:5678/webhook/fintwin-engine"
+                    payload = {
+                        "customer_name": result.get("customer_name"),
+                        "age": "",
+                        "city": result.get("city", ""),
+                        "event_type": result.get("event_label") or result.get("event_type"),
+                        "signal": result.get("signal"),
+                        "recommended_products": ", ".join(result.get("final_products", [])),
+                        "email": "dev.1806raikwar21@gmail.com",
+                        "phone": "+919876543210",
+                    }
+                    async with httpx.AsyncClient(timeout=15) as client:
+                        resp = await client.post(N8N_WEBHOOK_URL, json=payload)
+                        resp.raise_for_status()
+                    print(f"[AutoSend] ⚡ Auto-sent email for {cid} ({result.get('customer_name')}) — high priority, compliance clean")
+                    # Log to email_deliveries table
+                    await asyncio.to_thread(
+                        db.record_email_delivery,
+                        result.get("run_id"),
+                        "dev.1806raikwar21@gmail.com",
+                        "auto_sent",
+                        None
+                    )
+                    # Broadcast auto-send status so frontend can update the card
+                    await manager.broadcast({
+                        "type": "auto_sent",
+                        "customer_id": cid,
+                    })
+                except Exception as e:
+                    print(f"[AutoSend] Failed for {cid}: {e}")
+            else:
+                reason = "low/medium priority" if priority != "high" else "compliance revised"
+                print(f"[Agent Worker] {cid} queued for manual review ({reason})")
+            
             # 5. Rate limit safety delay (8 seconds) to protect free-tier API quotas
             await asyncio.sleep(8.0)
             agent_queue.task_done()
