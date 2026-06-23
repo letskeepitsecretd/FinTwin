@@ -75,6 +75,41 @@ def evaluate_scenario(scenario: dict, run_data: dict) -> list[dict]:
             pf_reasons.append(f"Priority '{actual_priority}' below min allowed '{min_p}'")
             
     pf_notes = "; ".join(pf_reasons) if pf_reasons else "Recommendation and priority are appropriate."
+    
+    # Check custom conditions using eval
+    if "check_conditions" in expected:
+        class SubstringList(list):
+            def __contains__(self, item):
+                item_norm = item.lower().replace("_", " ")
+                for x in self:
+                    x_norm = x.lower().replace("_", " ")
+                    if item_norm in x_norm or x_norm in item_norm:
+                        return True
+                return False
+
+        eval_ctx = {
+            "priority": actual_priority.lower(),
+            "final_products": actual_products,
+            "final_products_lower": SubstringList([p.lower() for p in actual_products]),
+            "reasoning_lower": (run_data.get("reasoning") or "").lower(),
+            "draft_lower": (run_data.get("outreach", {}).get("body") or "").lower(),
+            "any": any,
+            "all": all,
+            "len": len,
+        }
+        
+        for cond in expected["check_conditions"]:
+            try:
+                passed = eval(cond, eval_ctx)
+                if not passed:
+                    product_fit_passed = False
+                    pf_reasons.append(f"Failed condition: {cond}")
+            except Exception as e:
+                product_fit_passed = False
+                pf_reasons.append(f"Error evaluating condition '{cond}': {e}")
+                
+        pf_notes = "; ".join(pf_reasons) if pf_reasons else "All custom check conditions passed."
+
     results.append({
         "dimension": "product_fit",
         "passed": product_fit_passed,
@@ -135,33 +170,28 @@ def evaluate_scenario(scenario: dict, run_data: dict) -> list[dict]:
     
     return results
 
-def main():
-    parser = argparse.ArgumentParser(description="FinTwin Agent Evaluation Framework")
-    parser.add_argument("--limit", type=int, default=None, help="Limit the number of scenarios to run (default: run all)")
-    args = parser.parse_args()
-    
+def run_specific(scenario_ids: list[str]):
     db.init_db()  # Ensure database and tables exist
     
-    scenarios_to_run = SCENARIOS
-    if args.limit is not None:
-        scenarios_to_run = SCENARIOS[:args.limit]
-        
+    scenarios_to_run = [s for s in SCENARIOS if s["id"] in scenario_ids]
+    # Maintain specified order
+    scenarios_to_run.sort(key=lambda s: scenario_ids.index(s["id"]))
+    
     run_timestamp = datetime.now().isoformat()
     
     print("=" * 70)
-    print(f"STARTING EVALUATION RUN: {run_timestamp}")
-    print(f"Scenarios Selected: {len(scenarios_to_run)} / {len(SCENARIOS)}")
+    print(f"STARTING SPECIFIC EVALUATION RUN: {run_timestamp}")
+    print(f"Scenarios Selected: {len(scenarios_to_run)}")
     print("=" * 70)
     
     all_eval_rows = []
     consecutive_rate_limits = 0
     
     for i, s in enumerate(scenarios_to_run, 1):
-        print(f"[{i}/{len(scenarios_to_run)}] Running scenario '{s['id']}': {s['name']}")
+        print(f"\n[{i}/{len(scenarios_to_run)}] Running scenario '{s['id']}': {s['name']}")
         
-        # 1. Execute agent customer pipeline
         try:
-            # Inject a safety cooldown between Groq API calls to avoid rate limits
+            # Cooldown between API calls
             if i > 1:
                 time.sleep(6)
                 
@@ -169,7 +199,7 @@ def main():
             run_data = process_customer(s["event"], s["customer"])
             elapsed = time.time() - start_time
             print(f"  ✓ Agent finished in {elapsed:.1f}s")
-            consecutive_rate_limits = 0  # Reset counter on success
+            consecutive_rate_limits = 0
             
             # Evaluate dimensions
             eval_results = evaluate_scenario(s, run_data)
@@ -193,7 +223,6 @@ def main():
             error_str = str(e)
             print(f"  ✗ Scenario run FAILED: {error_str}", file=sys.stderr)
             
-            # Record failed evaluation rows for all 3 dimensions
             for dim in ["product_fit", "tool_usage", "compliance"]:
                 all_eval_rows.append({
                     "scenario_id": s["id"],
@@ -220,7 +249,137 @@ def main():
         except Exception as e:
             print(f"\n[Database] ERROR writing results to SQLite: {e}", file=sys.stderr)
             
-    # Calculate and Print Summary Report
+    # Print Summary Report
+    print("\n" + "=" * 70)
+    print("EVALUATION REPORT SUMMARY")
+    print("=" * 70)
+    
+    by_dim = {"product_fit": {"passed": 0, "total": 0}, "tool_usage": {"passed": 0, "total": 0}, "compliance": {"passed": 0, "total": 0}}
+    failures = []
+    
+    for row in all_eval_rows:
+        dim = row["dimension"]
+        by_dim[dim]["total"] += 1
+        if row["passed"]:
+            by_dim[dim]["passed"] += 1
+        else:
+            failures.append(row)
+            
+    total_passed = sum(d["passed"] for d in by_dim.values())
+    total_items = sum(d["total"] for d in by_dim.values())
+    
+    for dim, stats in by_dim.items():
+        pass_rate = (stats["passed"] / stats["total"] * 100) if stats["total"] else 0.0
+        print(f"Dimension {dim:<12}: {stats['passed']:>2} / {stats['total']:>2} passed ({pass_rate:.1f}%)")
+        
+    overall_pass_rate = (total_passed / total_items * 100) if total_items else 0.0
+    print("-" * 70)
+    print(f"OVERALL SCORE       : {total_passed:>2} / {total_items:>2} passed ({overall_pass_rate:.1f}%)")
+    print("=" * 70)
+    
+    if failures:
+        print("\nDETAILED FAILED SCENARIOS:")
+        print("-" * 70)
+        current_scenario = None
+        for fail in failures:
+            if current_scenario != fail["scenario_id"]:
+                current_scenario = fail["scenario_id"]
+                print(f"\n* Scenario '{fail['scenario_id']}': {fail['scenario_name']}")
+            print(f"  - [{fail['dimension'].upper()}] failed:")
+            print(f"    Expected: {fail['expected_value']}")
+            print(f"    Actual  : {fail['actual_value']}")
+            print(f"    Notes   : {fail['notes']}")
+        print("-" * 70)
+    else:
+        print("\n✓ ALL TESTED SCENARIOS PASSED PERFECTLY!")
+        print("=" * 70)
+
+def main():
+    parser = argparse.ArgumentParser(description="FinTwin Agent Evaluation Framework")
+    parser.add_argument("--limit", type=int, default=None, help="Limit the number of scenarios to run (default: run all)")
+    parser.add_argument("--scenario", type=str, default=None, help="Run a specific scenario by ID")
+    args = parser.parse_args()
+    
+    db.init_db()  # Ensure database and tables exist
+    
+    scenarios_to_run = SCENARIOS
+    if args.scenario is not None:
+        scenarios_to_run = [s for s in SCENARIOS if s["id"] == args.scenario]
+        if not scenarios_to_run:
+            print(f"Error: Scenario '{args.scenario}' not found.", file=sys.stderr)
+            sys.exit(1)
+    elif args.limit is not None:
+        scenarios_to_run = SCENARIOS[:args.limit]
+        
+    run_timestamp = datetime.now().isoformat()
+    
+    print("=" * 70)
+    print(f"STARTING EVALUATION RUN: {run_timestamp}")
+    print(f"Scenarios Selected: {len(scenarios_to_run)} / {len(SCENARIOS)}")
+    print("=" * 70)
+    
+    all_eval_rows = []
+    consecutive_rate_limits = 0
+    
+    for i, s in enumerate(scenarios_to_run, 1):
+        print(f"[{i}/{len(scenarios_to_run)}] Running scenario '{s['id']}': {s['name']}")
+        
+        try:
+            if i > 1:
+                time.sleep(6)
+                
+            start_time = time.time()
+            run_data = process_customer(s["event"], s["customer"])
+            elapsed = time.time() - start_time
+            print(f"  ✓ Agent finished in {elapsed:.1f}s")
+            consecutive_rate_limits = 0
+            
+            eval_results = evaluate_scenario(s, run_data)
+            
+            for res in eval_results:
+                all_eval_rows.append({
+                    "scenario_id": s["id"],
+                    "scenario_name": s["name"],
+                    "dimension": res["dimension"],
+                    "passed": int(res["passed"]),
+                    "actual_value": res["actual_value"],
+                    "expected_value": res["expected_value"],
+                    "notes": res["notes"],
+                    "run_timestamp": run_timestamp
+                })
+                
+                status_char = "✓" if res["passed"] else "✗"
+                print(f"    {status_char} {res['dimension'].upper()}: {res['notes']}")
+                
+        except Exception as e:
+            error_str = str(e)
+            print(f"  ✗ Scenario run FAILED: {error_str}", file=sys.stderr)
+            
+            for dim in ["product_fit", "tool_usage", "compliance"]:
+                all_eval_rows.append({
+                    "scenario_id": s["id"],
+                    "scenario_name": s["name"],
+                    "dimension": dim,
+                    "passed": 0,
+                    "actual_value": "ERROR",
+                    "expected_value": "AGENT RUN SUCCESS",
+                    "notes": f"Agent failed to execute: {error_str}",
+                    "run_timestamp": run_timestamp
+                })
+            
+            if "rate limit" in error_str.lower() or "429" in error_str:
+                consecutive_rate_limits += 1
+                if consecutive_rate_limits >= 3:
+                    print("\n[WARNING] Hit 3 consecutive API rate/quota limits. Stopping run early to conserve API usage.", file=sys.stderr)
+                    break
+                    
+    if all_eval_rows:
+        try:
+            db.insert_eval_results(all_eval_rows)
+            print(f"\n[Database] Wrote {len(all_eval_rows)} evaluation rows to SQLite table 'eval_results'.")
+        except Exception as e:
+            print(f"\n[Database] ERROR writing results to SQLite: {e}", file=sys.stderr)
+            
     print("\n" + "=" * 70)
     print("EVALUATION REPORT SUMMARY")
     print("=" * 70)
@@ -266,4 +425,8 @@ def main():
         print("=" * 70)
 
 if __name__ == "__main__":
-    main()
+    run_specific([
+        "ADVERSARIAL_DEBT_BURIED_SALARY_JUMP",
+        "EXTREME_MINOR_ACCOUNT",
+        "ADVERSARIAL_CONTRADICTORY_SIGNALS"
+    ])

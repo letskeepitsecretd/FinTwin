@@ -3,3 +3,7 @@ __pycache__/
 .env.save
 data/fintwin.db-shm
 data/fintwin.db-wal
+venv/
+*.dylib
+data/fintwin.db
+data/rag_embeddings.pkl

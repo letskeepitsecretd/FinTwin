@@ -33,6 +33,7 @@ import json
 import os
 import sys
 import time
+import random
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -42,12 +43,39 @@ import db
 
 load_dotenv()
 
-API_KEY = os.getenv("GROQ_API_KEY")
-if not API_KEY:
-    sys.exit("ERROR: GROQ_API_KEY not found in .env. Get one free at https://console.groq.com/keys")
+# ---------------------------------------------------------------------------
+# Multi-key rotation (3 free Groq keys = 300,000 tokens/day combined)
+# ---------------------------------------------------------------------------
 
-client = OpenAI(api_key=API_KEY, base_url="https://api.groq.com/openai/v1")
-MODEL_NAME = "llama-3.3-70b-versatile"
+_GROQ_KEYS = [
+    k for k in [
+        os.getenv("GROQ_API_KEY_1"),
+        os.getenv("GROQ_API_KEY_2"),
+        os.getenv("GROQ_API_KEY_3"),
+        os.getenv("GROQ_API_KEY"),  # fallback: single key setup
+    ] if k
+]
+
+if not _GROQ_KEYS:
+    sys.exit(
+        "ERROR: No Groq API key found. Add GROQ_API_KEY_1, GROQ_API_KEY_2, "
+        "GROQ_API_KEY_3 (or at minimum GROQ_API_KEY) to your .env file."
+    )
+
+_current_key_index = [0]
+
+def get_client() -> OpenAI:
+    """Return an OpenAI-compatible Groq client using the current active key."""
+    key = _GROQ_KEYS[_current_key_index[0] % len(_GROQ_KEYS)]
+    return OpenAI(api_key=key, base_url="https://api.groq.com/openai/v1")
+
+def rotate_key(reason: str = "quota"):
+    """Rotate to the next available key and log the reason."""
+    _current_key_index[0] = (_current_key_index[0] + 1) % len(_GROQ_KEYS)
+    print(f"[KeyRotation] Rotated to key index {_current_key_index[0]} (reason: {reason}). "
+          f"{len(_GROQ_KEYS)} keys available.")
+
+MODEL_NAME = os.getenv("FINTWIN_MODEL", "llama-3.3-70b-versatile")
 
 DATA_DIR = Path("data")
 EVENTS_FILE = DATA_DIR / "detected_events.json"
@@ -219,6 +247,26 @@ def pick_subset(events: list[dict], max_count: int) -> list[dict]:
     return subset
 
 
+def clean_llm_json(text: str) -> str:
+    text = text.strip()
+    if "<think>" in text and "</think>" in text:
+        text = text.split("</think>", 1)[1].strip()
+    elif "<think>" in text:
+        text = text.split("<think>", 1)[1]
+        if "</think>" in text:
+            text = text.split("</think>", 1)[1].strip()
+        else:
+            first_brace = text.find("{")
+            if first_brace != -1:
+                text = text[first_brace:].strip()
+    if text.startswith("```"):
+        text = text.strip("`")
+        if text.lower().startswith("json"):
+            text = text[4:].strip()
+        text = text.strip("`").strip()
+    return text
+
+
 # ---------------------------------------------------------------------------
 # STEP 1+2: INVESTIGATE + DECIDE (agentic loop with tool calling)
 # ---------------------------------------------------------------------------
@@ -227,14 +275,26 @@ INVESTIGATE_SYSTEM_PROMPT = """You are an AI agent for SBI relationship managers
 event has been detected. Before recommending anything, investigate the customer's real financial \
 situation using the tools available to you. Call whichever tools are relevant — you don't need to \
 call all of them if the situation is simple, but for anything involving a loan or investment \
-recommendation, check affordability and existing products first. Use search_product_policy to look \
-up actual product eligibility criteria, rates, and restrictions before recommending any specific \
-product — this grounds your recommendation in real policy rather than general knowledge. Once you \
-have enough information, respond with your final decision as JSON (no markdown fences) in this exact shape:
+recommendation, check affordability and existing products first. You MUST call search_product_policy \
+for every candidate product mentioned in the user prompt to verify its eligibility criteria, rates, \
+and restrictions before deciding whether to recommend or drop it — this grounds your recommendation \
+in real policy rather than general knowledge.
+
+Banking Guidelines:
+- Do NOT recommend any credit or loan products if the customer has severe debt burden (existing DTI > 50%), is underage (under 21 for loans), or fails eligibility criteria.
+- Do NOT recommend volatile investment products (like SIP or mutual funds) for senior citizens (60+) or customers with missed EMIs or zero savings runway.
+- You SHOULD still recommend zero-risk, zero-balance account upgrades (like SBI Salary Account Upgrade) for salaried customers even if they have high debt or low savings, as it does not add to their debt burden and provides transaction benefits.
+
+Priority Guidelines:
+- "low": Use this if event detection confidence is low (< 0.7), if the customer has severe debt burden (existing DTI > 50%), if there are major eligibility/risk flags (e.g. customer is under 21, or too close to retirement), or if you reject/drop the main loan or investment products.
+- "medium": Standard cases with clear product fit, reasonable confidence, and acceptable debt burden.
+- "high": High-confidence, strong-affordability cases for major events with no eligibility issues.
+
+Once you have enough information, respond with your final decision as JSON (no markdown fences) in this exact shape:
 {
   "reasoning": "2-3 sentences explaining the recommendation, grounded in what you found from your tool calls — reference actual numbers",
   "priority": "high | medium | low",
-  "priority_reason": "one short sentence",
+  "priority_reason": "one short sentence explaining the priority choice",
   "final_products": ["product names you actually recommend — you may DROP a candidate product if your investigation shows it's a bad fit"]
 }"""
 
@@ -267,24 +327,30 @@ def run_investigate_decide(event: dict, customer: dict, trace: list) -> dict:
         {"role": "user", "content": build_investigate_user_prompt(event, customer)},
     ]
 
-    max_tool_rounds = 4
+    max_tool_rounds = 6
     for _ in range(max_tool_rounds):
-        response = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=messages,
-            tools=TOOLS_SCHEMA,
-            tool_choice="auto",
-            temperature=0.3,
-            max_tokens=700,
-        )
+        for _attempt in range(len(_GROQ_KEYS) + 1):
+            try:
+                response = get_client().chat.completions.create(
+                    model=MODEL_NAME,
+                    messages=messages,
+                    tools=TOOLS_SCHEMA,
+                    tool_choice="auto",
+                    temperature=0.0,
+                    max_tokens=2048,
+                )
+                break  # success
+            except Exception as e:
+                if "429" in str(e) or "quota" in str(e).lower() or "rate" in str(e).lower():
+                    if _attempt < len(_GROQ_KEYS):
+                        rotate_key("429")
+                        time.sleep(2)
+                        continue
+                raise  # non-quota error, re-raise immediately
         msg = response.choices[0].message
 
         if msg.tool_calls:
-            messages.append({
-                "role": "assistant",
-                "content": msg.content,
-                "tool_calls": [tc.model_dump() for tc in msg.tool_calls],
-            })
+            messages.append(msg)
             for tc in msg.tool_calls:
                 fn_name = tc.function.name
                 fn = TOOL_FUNCTIONS.get(fn_name)
@@ -308,19 +374,18 @@ def run_investigate_decide(event: dict, customer: dict, trace: list) -> dict:
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tc.id,
+                    "name": fn_name,
                     "content": json.dumps(result),
                 })
             continue
 
         # No more tool calls — model is ready with a final answer
-        text = (msg.content or "").strip()
-        if text.startswith("```"):
-            text = text.strip("`")
-            if text.lower().startswith("json"):
-                text = text[4:].strip()
+        text = msg.content or ""
+        text = clean_llm_json(text)
         try:
             decision = json.loads(text)
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as e:
+            print(f"[DEBUG ERROR] JSON Decode Error: {e} | Raw text: {text!r}", file=sys.stderr)
             decision = {
                 "reasoning": text or "Model did not return valid JSON.",
                 "priority": "medium",
@@ -361,17 +426,24 @@ Respond ONLY with JSON, no markdown fences:
   "body": "the message, max 400 characters, use the customer's real name, no placeholders"
 }}"""
 
-    response = client.chat.completions.create(
-        model=MODEL_NAME,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
-        max_tokens=300,
-    )
-    text = response.choices[0].message.content.strip()
-    if text.startswith("```"):
-        text = text.strip("`")
-        if text.lower().startswith("json"):
-            text = text[4:].strip()
+    for _attempt in range(len(_GROQ_KEYS) + 1):
+        try:
+            response = get_client().chat.completions.create(
+                model=MODEL_NAME,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7,
+                max_tokens=1024,
+            )
+            break  # success
+        except Exception as e:
+            if "429" in str(e) or "quota" in str(e).lower() or "rate" in str(e).lower():
+                if _attempt < len(_GROQ_KEYS):
+                    rotate_key("429")
+                    time.sleep(2)
+                    continue
+            raise  # non-quota error, re-raise immediately
+    text = response.choices[0].message.content or ""
+    text = clean_llm_json(text)
     try:
         draft = json.loads(text)
     except json.JSONDecodeError:
@@ -406,17 +478,24 @@ Respond ONLY with JSON, no markdown fences:
 
 def run_validate(draft: dict, trace: list) -> dict:
     prompt = VALIDATE_PROMPT.format(body=draft.get("body", ""))
-    response = client.chat.completions.create(
-        model=MODEL_NAME,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.1,
-        max_tokens=400,
-    )
-    text = response.choices[0].message.content.strip()
-    if text.startswith("```"):
-        text = text.strip("`")
-        if text.lower().startswith("json"):
-            text = text[4:].strip()
+    for _attempt in range(len(_GROQ_KEYS) + 1):
+        try:
+            response = get_client().chat.completions.create(
+                model=MODEL_NAME,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+                max_tokens=1024,
+            )
+            break  # success
+        except Exception as e:
+            if "429" in str(e) or "quota" in str(e).lower() or "rate" in str(e).lower():
+                if _attempt < len(_GROQ_KEYS):
+                    rotate_key("429")
+                    time.sleep(2)
+                    continue
+            raise  # non-quota error, re-raise immediately
+    text = response.choices[0].message.content or ""
+    text = clean_llm_json(text)
     try:
         validation = json.loads(text)
     except json.JSONDecodeError:
@@ -454,6 +533,7 @@ def process_customer(event: dict, customer: dict) -> dict:
     final_draft = run_validate(draft, trace)
 
     return {
+        "type": "agent_decision",
         "customer_id": customer.get("customer_id"),
         "customer_name": customer.get("name"),
         "event_type": event.get("event_type"),
