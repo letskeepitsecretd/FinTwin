@@ -116,6 +116,18 @@ async def transaction_generator_loop():
                     
                     print(f"[DEBUG] transaction generated: {txn.get('date')} | {txn.get('category')} | ₹{txn.get('amount')}")
                     
+                    # Broadcast the transaction to WebSocket clients
+                    await manager.broadcast({
+                        "type": "transaction",
+                        "id": f"{txn.get('date')}-{cid}-{txn.get('amount')}",
+                        "customer_id": cid,
+                        "customer_name": c_name(cid),
+                        "amount": txn.get("amount"),
+                        "category": txn.get("category"),
+                        "date": txn.get("date"),
+                        "is_life_event": should_inject_event
+                    })
+                    
                     # Check for new life events
                     detected = simulator.check_events_for_customer(cid)
                     for event in detected:
@@ -142,6 +154,21 @@ async def transaction_generator_loop():
             await asyncio.sleep(1.0)
 
 
+async def send_to_n8n(payload: dict) -> bool:
+    """Helper to send an email payload to the n8n webhook."""
+    import httpx
+    N8N_WEBHOOK_URL = "http://localhost:5678/webhook/fintwin-engine"
+    try:
+        async with httpx.AsyncClient(timeout=15) as client:
+            print(f"[n8n payload]: {json.dumps(payload, ensure_ascii=False)}")
+            resp = await client.post(N8N_WEBHOOK_URL, json=payload)
+            resp.raise_for_status()
+        return True
+    except Exception as e:
+        print(f"[n8n] Send failed: {e}")
+        return False
+
+
 async def agent_worker_loop():
     """Dequeues detected events, processes them through the LLM agent, and broadcasts them."""
     print("[Agent Worker] Started agent queue processor background loop.")
@@ -157,6 +184,23 @@ async def agent_worker_loop():
             # process_customer is synchronous, run in a separate thread so it doesn't block the event loop
             result = await asyncio.to_thread(process_customer, event, customer)
             
+            # Ensure result dict has age and city from customer profile
+            if "age" not in result or not result.get("age"):
+                if simulator and cid in simulator.customers:
+                    result["age"] = simulator.customers[cid].get("age", "")
+                elif customer:
+                    result["age"] = customer.get("age", "")
+                else:
+                    result["age"] = ""
+
+            if "city" not in result or not result.get("city"):
+                if simulator and cid in simulator.customers:
+                    result["city"] = simulator.customers[cid].get("city", "")
+                elif customer:
+                    result["city"] = customer.get("city", "")
+                else:
+                    result["city"] = ""
+            
             # 3. Save result to SQLite database
             await asyncio.to_thread(db.insert_agent_run, result)
             
@@ -168,22 +212,20 @@ async def agent_worker_loop():
             priority = (result.get("priority") or "").lower()
             was_revised = result.get("outreach", {}).get("was_revised", True)
             if priority == "high" and not was_revised:
-                try:
-                    import httpx
-                    N8N_WEBHOOK_URL = "http://localhost:5678/webhook/fintwin-engine"
-                    payload = {
-                        "customer_name": result.get("customer_name"),
-                        "age": "",
-                        "city": result.get("city", ""),
-                        "event_type": result.get("event_label") or result.get("event_type"),
-                        "signal": result.get("signal"),
-                        "recommended_products": ", ".join(result.get("final_products", [])),
-                        "email": "dev.1806raikwar21@gmail.com",
-                        "phone": "+919876543210",
-                    }
-                    async with httpx.AsyncClient(timeout=15) as client:
-                        resp = await client.post(N8N_WEBHOOK_URL, json=payload)
-                        resp.raise_for_status()
+                payload = {
+                    "customer_name": result.get("customer_name"),
+                    "age": result.get("age", ""),
+                    "city": result.get("city", ""),
+                    "event_type": result.get("event_label") or result.get("event_type"),
+                    "signal": result.get("signal"),
+                    "recommended_products": ", ".join(result.get("final_products", [])),
+                    "email": "dev.1806raikwar21@gmail.com",
+                    "phone": "+919876543210",
+                    "email_body": result.get("outreach", {}).get("body", ""),
+                    "subject": result.get("outreach", {}).get("subject", "") or f"SBI FinTwin — {result.get('event_label', 'Important Update')}",
+                }
+                success = await send_to_n8n(payload)
+                if success:
                     print(f"[AutoSend] ⚡ Auto-sent email for {cid} ({result.get('customer_name')}) — high priority, compliance clean")
                     # Log to email_deliveries table
                     await asyncio.to_thread(
@@ -198,8 +240,6 @@ async def agent_worker_loop():
                         "type": "auto_sent",
                         "customer_id": cid,
                     })
-                except Exception as e:
-                    print(f"[AutoSend] Failed for {cid}: {e}")
             else:
                 reason = "low/medium priority" if priority != "high" else "compliance revised"
                 print(f"[Agent Worker] {cid} queued for manual review ({reason})")
@@ -295,6 +335,56 @@ async def get_run(customer_id: str):
         raise
     except Exception as e:
         raise HTTPException(500, f"Error querying database: {e}")
+
+
+
+@app.post("/api/send-email")
+async def send_email(payload: dict):
+    """Manually send an outreach email via the n8n webhook."""
+    # Build payload matching n8n requirements
+    n8n_payload = {
+        "customer_name": payload.get("customer_name"),
+        "age": payload.get("age", ""),
+        "city": payload.get("city", ""),
+        "event_type": payload.get("event_type"),
+        "signal": payload.get("signal"),
+        "recommended_products": payload.get("recommended_products", ""),
+        "email": payload.get("to_email", "dev.1806raikwar21@gmail.com"),
+        "phone": "+919876543210",
+        "subject": payload.get("subject", ""),
+        "email_body": payload.get("body", ""),
+    }
+    
+    success = await send_to_n8n(n8n_payload)
+    if not success:
+        raise HTTPException(status_code=500, detail="Failed to send email to n8n webhook")
+        
+    # Log to email_deliveries table
+    conn = db.get_connection()
+    try:
+        cursor = conn.cursor()
+        cursor.execute("""
+        SELECT r.run_id FROM agent_runs r
+        JOIN customers c ON r.customer_id = c.customer_id
+        WHERE c.name = ?
+        ORDER BY r.created_at DESC LIMIT 1
+        """, (payload.get("customer_name"),))
+        row = cursor.fetchone()
+        run_id = row["run_id"] if row else None
+    except Exception as db_err:
+        print(f"[API] Error resolving run_id: {db_err}")
+        run_id = None
+    finally:
+        conn.close()
+
+    await asyncio.to_thread(
+        db.record_email_delivery,
+        run_id,
+        payload.get("to_email", "dev.1806raikwar21@gmail.com"),
+        "sent",
+        None
+    )
+    return {"success": True}
 
 
 @app.post("/api/run-agent")

@@ -297,9 +297,14 @@ const FinTwinDashboard: React.FC = () => {
           };
           setTransactions(prev => [txn, ...prev].slice(0, 20));
           setStats(s => ({ ...s, transactions: s.transactions + 1 }));
-        }
-
-        if (data.type === "agent_decision" || data.customer_id) {
+        } else if (data.type === "auto_sent") {
+          setAiDecisions(prev => prev.map(d => 
+            d.customerId === data.customer_id 
+              ? { ...d, autoSent: true }
+              : d
+          ));
+          setStats(s => ({ ...s, emails: s.emails + 1 }));
+        } else if (data.type === "agent_decision" || data.customer_id) {
           const decision = parseAgentRun(data);
           setAiDecisions(prev => {
             const exists = prev.findIndex(d => d.customerId === decision.customerId);
@@ -311,15 +316,6 @@ const FinTwinDashboard: React.FC = () => {
             return [decision, ...prev].slice(0, 15);
           });
           setStats(s => ({ ...s, events: s.events + 1 }));
-        }
-
-        if (data.type === "auto_sent") {
-          setAiDecisions(prev => prev.map(d => 
-            d.customerId === data.customer_id 
-              ? { ...d, autoSent: true }
-              : d
-          ));
-          setStats(s => ({ ...s, emails: s.emails + 1 }));
         }
       } catch (e) {
         console.error("WebSocket parse error:", e);
