@@ -315,6 +315,10 @@ async def startup_event():
 # API Endpoints
 # ---------------------------------------------------------------------------
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
 @app.get("/api/runs")
 async def get_runs():
     try:

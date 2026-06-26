@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-DB_PATH = Path("data/fintwin.db")
+DB_PATH = Path("/tmp/fintwin.db")
 
 def init_db():
     """Initializes the SQLite database and creates the necessary tables."""

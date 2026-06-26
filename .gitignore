@@ -7,3 +7,4 @@ venv/
 *.dylib
 data/fintwin.db
 data/rag_embeddings.pkl
+.env # add it if missing

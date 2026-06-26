@@ -261,7 +261,7 @@ const FinTwinDashboard: React.FC = () => {
 
   // Load existing runs from SQLite-backed API on mount
   React.useEffect(() => {
-    fetch("http://localhost:8000/api/runs")
+    fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/runs")
       .then(r => r.json())
       .then((runs: any[]) => {
         if (!Array.isArray(runs)) return;
@@ -279,7 +279,7 @@ const FinTwinDashboard: React.FC = () => {
       return;
     }
 
-    const ws = new WebSocket("ws://localhost:8000/ws");
+    const ws = new WebSocket(import.meta.env.VITE_WS_URL || "ws://localhost:8000/ws");
     wsRef.current = ws;
 
     ws.onmessage = (event) => {
@@ -352,7 +352,7 @@ const FinTwinDashboard: React.FC = () => {
   const handleSendEmail = async (decision: AIDecision) => {
     setSendStatuses(prev => new Map(prev).set(decision.customerId, "sending"));
     try {
-      const res = await fetch("http://localhost:8000/api/send-email", {
+      const res = await fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -380,12 +380,12 @@ const FinTwinDashboard: React.FC = () => {
   const handleToggle = async () => {
     try {
       const endpoint = isActive
-        ? "http://localhost:8000/api/feed/stop"
-        : "http://localhost:8000/api/feed/start";
+        ? (import.meta.env.VITE_API_URL || "http://localhost:8000") + "/api/feed/stop"
+        : (import.meta.env.VITE_API_URL || "http://localhost:8000") + "/api/feed/start";
       await fetch(endpoint, { method: "POST" });
       if (!isActive) {
         // Also set speed
-        await fetch("http://localhost:8000/api/feed/speed", {
+        await fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/feed/speed", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ speed }),
@@ -401,7 +401,7 @@ const FinTwinDashboard: React.FC = () => {
     setSpeed(s);
     if (isActive) {
       try {
-        await fetch("http://localhost:8000/api/feed/speed", {
+        await fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/feed/speed", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ speed: s }),
