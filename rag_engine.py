@@ -2,7 +2,6 @@ import os
 import pickle
 import numpy as np
 from pathlib import Path
-from sentence_transformers import SentenceTransformer
 
 KNOWLEDGE_DIR = Path("knowledge_base")
 EMBEDDINGS_FILE = Path("data/rag_embeddings.pkl")
@@ -80,6 +79,7 @@ def build_rag_index():
     print(f"[RAG Engine] Found {len(all_chunks)} chunks to embed.")
     
     # Load model
+    from sentence_transformers import SentenceTransformer
     model = SentenceTransformer("all-MiniLM-L6-v2")
     
     # Generate embeddings
@@ -103,6 +103,7 @@ def load_rag_index() -> tuple[SentenceTransformer, dict]:
     """
     global _index, _model
     if _model is None:
+        from sentence_transformers import SentenceTransformer
         _model = SentenceTransformer("all-MiniLM-L6-v2")
     if _index is None:
         if not EMBEDDINGS_FILE.exists():
