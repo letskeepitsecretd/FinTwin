@@ -541,5 +541,3 @@ const FinTwinDashboard: React.FC = () => {
 export default function Demo() {
   return <FinTwinDashboard />;
 }
-# force redeploy
-// force rebuild Sat Jun 27 03:15:48 IST 2026
