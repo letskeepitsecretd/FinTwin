@@ -456,7 +456,7 @@ async def stop_feed():
 @app.post("/api/feed/speed")
 async def adjust_speed(control: SpeedControl):
     global speed_multiplier
-    if control.speed not in [1, 5, 20]:
+    if control.speed not in [1, 5, 10, 20]:
          raise HTTPException(400, "Speed must be 1, 5, or 20")
     speed_multiplier = control.speed
     print(f"[API] Speed adjusted to {speed_multiplier}x.")
