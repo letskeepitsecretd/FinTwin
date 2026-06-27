@@ -127,6 +127,9 @@ def _keyword_search(query: str, chunks: list, top_k: int = 3) -> list[dict]:
     return [{"chunk": chunks[i], "score": s} for s, i in scores[:top_k]]
 
 def search_product_policy(query: str, top_k: int = 3) -> list[dict]:
+    # Skip RAG entirely if disabled (e.g. low-memory environments)
+    if os.environ.get("DISABLE_RAG") == "1":
+        return []
     """
     Performs semantic search across the product knowledge base using cosine similarity.
     Returns the top-k matches with similarity scores.
