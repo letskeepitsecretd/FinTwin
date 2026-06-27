@@ -477,7 +477,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
 
 # Serve the frontend static files
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+# app.mount("/", StaticFiles(directory="static", html=True), name="static")  # disabled: frontend on Vercel
 
 
 if __name__ == "__main__":
