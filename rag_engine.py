@@ -115,12 +115,28 @@ def load_rag_index() -> tuple[SentenceTransformer, dict]:
             raise FileNotFoundError(f"Embeddings file {EMBEDDINGS_FILE} could not be loaded or created.")
     return _model, _index
 
+def _keyword_search(query: str, chunks: list, top_k: int = 3) -> list[dict]:
+    """Fallback keyword search when model unavailable."""
+    query_words = set(query.lower().split())
+    scores = []
+    for i, chunk in enumerate(chunks):
+        text_words = set(chunk["text"].lower().split())
+        score = len(query_words & text_words) / (len(query_words) + 1)
+        scores.append((score, i))
+    scores.sort(reverse=True)
+    return [{"chunk": chunks[i], "score": s} for s, i in scores[:top_k]]
+
 def search_product_policy(query: str, top_k: int = 3) -> list[dict]:
     """
     Performs semantic search across the product knowledge base using cosine similarity.
     Returns the top-k matches with similarity scores.
     """
-    model, index = load_rag_index()
+    try:
+        model, index = load_rag_index()
+    except Exception:
+        if _index is not None:
+            return _keyword_search(query, _index["chunks"], top_k)
+        return []
     chunks = index["chunks"]
     embeddings = index["embeddings"]
     
