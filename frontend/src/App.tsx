@@ -385,7 +385,7 @@ const FinTwinDashboard: React.FC = () => {
       await fetch(endpoint, { method: "POST" });
       if (!isActive) {
         // Also set speed
-        await fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/feed/speed", {
+        await fetch((import.meta.env.VITE_API_URL || "http://localhost:8000") + "/api/feed/speed", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ speed }),
@@ -401,7 +401,7 @@ const FinTwinDashboard: React.FC = () => {
     setSpeed(s);
     if (isActive) {
       try {
-        await fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/feed/speed", {
+        await fetch((import.meta.env.VITE_API_URL || "http://localhost:8000") + "/api/feed/speed", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ speed: s }),
