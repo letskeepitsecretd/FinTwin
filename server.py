@@ -101,7 +101,7 @@ async def transaction_generator_loop():
                 import random
                 
                 # inject an event with a 10% chance per tick, spaced by at least 15 seconds real time
-                should_inject_event = (random.random() < 0.10) and (current_time - last_event_injection_time > 15.0)
+                should_inject_event = (random.random() < 0.40) and (current_time - last_event_injection_time > 5.0)
                 
                 cid = random_customer_id()
                 print(f"[DEBUG] selected customer: cid={cid}, should_inject={should_inject_event}")
