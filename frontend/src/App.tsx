@@ -259,7 +259,26 @@ const FinTwinDashboard: React.FC = () => {
   const wsRef = React.useRef<WebSocket | null>(null);
   const speeds = [1, 5, 10, 20];
 
-  // Load existing runs from SQLite-backed API on mount
+  const parseAgentRun = (data: any): AIDecision => ({
+    id: data.customer_id || Date.now().toString(),
+    customerId: data.customer_id || Date.now().toString(),
+    customerName: data.customer_name || "Unknown",
+    city: data.city || "India",
+    eventType: data.event_label || data.event_type || "Event",
+    signal: data.signal || "",
+    finalProducts: Array.isArray(data.final_products)
+      ? data.final_products
+      : data.recommended_products?.map((p: any) => p.name || p) || [],
+    reasoning: data.reasoning || data.ai_reasoning || "",
+    outreachBody: data.outreach?.body || "",
+    outreachSubject: data.outreach?.subject || "",
+    wasRevised: data.outreach?.was_revised || false,
+    priority: (data.priority || "medium").toLowerCase() as "high" | "medium" | "low",
+    confidence: data.confidence || 0.85,
+  });
+
+
+    // Load existing runs from SQLite-backed API on mount
   React.useEffect(() => {
     fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/runs")
       .then(r => r.json())
@@ -331,23 +350,6 @@ const FinTwinDashboard: React.FC = () => {
     return () => ws.close();
   }, [isActive]);
 
-  const parseAgentRun = (data: any): AIDecision => ({
-    id: data.customer_id || Date.now().toString(),
-    customerId: data.customer_id || Date.now().toString(),
-    customerName: data.customer_name || "Unknown",
-    city: data.city || "India",
-    eventType: data.event_label || data.event_type || "Event",
-    signal: data.signal || "",
-    finalProducts: Array.isArray(data.final_products)
-      ? data.final_products
-      : data.recommended_products?.map((p: any) => p.name || p) || [],
-    reasoning: data.reasoning || data.ai_reasoning || "",
-    outreachBody: data.outreach?.body || "",
-    outreachSubject: data.outreach?.subject || "",
-    wasRevised: data.outreach?.was_revised || false,
-    priority: (data.priority || "medium").toLowerCase() as "high" | "medium" | "low",
-    confidence: data.confidence || 0.85,
-  });
 
   const handleSendEmail = async (decision: AIDecision) => {
     setSendStatuses(prev => new Map(prev).set(decision.customerId, "sending"));
