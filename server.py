@@ -221,7 +221,9 @@ async def agent_worker_loop():
                     "signal": result.get("signal"),
                     "recommended_products": ", ".join(result.get("final_products", [])),
                     "email": "dev.1806raikwar21@gmail.com",
+                    "to_email": "dev.1806raikwar21@gmail.com",
                     "phone": "+919876543210",
+                    "priority": priority,
                     "email_body": result.get("outreach", {}).get("body", ""),
                     "subject": result.get("outreach", {}).get("subject", "") or f"SBI FinTwin — {result.get('event_label', 'Important Update')}",
                 }
