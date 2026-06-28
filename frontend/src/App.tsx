@@ -354,7 +354,7 @@ const FinTwinDashboard: React.FC = () => {
   const handleSendEmail = async (decision: AIDecision) => {
     setSendStatuses(prev => new Map(prev).set(decision.customerId, "sending"));
     try {
-      const res = await fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/send-email", {
+      const res = await fetch((import.meta.env.VITE_API_URL || "http://localhost:8000") + "/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
