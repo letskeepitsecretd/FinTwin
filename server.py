@@ -311,7 +311,7 @@ async def agent_worker_loop():
                 print(f"[Agent Worker] {cid} queued for manual review ({reason})")
             
             # 5. Rate limit safety delay (8 seconds) to protect free-tier API quotas
-            await asyncio.sleep(8.0)
+            await asyncio.sleep(3.0)
             agent_queue.task_done()
             
         except Exception as e:
