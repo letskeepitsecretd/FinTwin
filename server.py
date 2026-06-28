@@ -183,7 +183,7 @@ async def send_to_n8n(payload: dict) -> bool:
 <body style="margin:0;padding:20px;background:#f0f2f5;font-family:Arial,sans-serif">
 <div style="max-width:600px;margin:0 auto;background:#FFFFFF;border:1px solid #E0E0E0;border-radius:10px;overflow:hidden">
   <div style="background:#1B2A4A;padding:24px 28px">
-    <div style="font-size:22px;color:#D4A24C;font-weight:normal">FinTwin by SBI</div>
+    <div style="font-size:22px;color:#D4A24C;font-weight:700">FinTwin by SBI</div>
     <div style="font-size:13px;color:#8C9AB5;margin-top:4px">Proactive Financial Intelligence</div>
   </div>
   <div style="background:#EAF1FB;padding:14px 28px;border-left:4px solid #1B5FA8">
@@ -197,9 +197,9 @@ async def send_to_n8n(payload: dict) -> bool:
       <div style="font-size:14px;font-weight:700;color:#1A2233;margin-bottom:12px">Recommended for You</div>
       <table style="width:100%;border-collapse:collapse">
         <tr style="background:#1B2A4A">
-          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:normal;color:#D4A24C;width:40%">Product</th>
-          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:normal;color:#D4A24C;width:40%">Why Now</th>
-          <th style="padding:10px 14px;text-align:center;font-size:12px;font-weight:normal;color:#D4A24C;width:20%">Action</th>
+          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:700;color:#D4A24C;width:40%">Product</th>
+          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:700;color:#D4A24C;width:40%">Why Now</th>
+          <th style="padding:10px 14px;text-align:center;font-size:12px;font-weight:700;color:#D4A24C;width:20%">Action</th>
         </tr>
         {products_rows}
       </table>
@@ -410,82 +410,7 @@ async def get_run(customer_id: str):
 
 @app.post("/api/send-email")
 async def send_email(payload: dict):
-    """Manually send an outreach email via the n8n webhook."""
-    # Build payload matching n8n requirements
-    body_text = payload.get("email_body", payload.get("body", ""))
-    prods = payload.get("recommended_products", "")
-    customer_name = payload.get("customer_name", "Valued Customer")
-    event_type = payload.get("event_type", "")
-    signal = payload.get("signal", "")
-    priority = payload.get("priority", "high")
-
-    products_rows = ""
-    for i, p in enumerate(prods.split(",")):
-        p = p.strip()
-        if p:
-            row_bg = "#FAFBFE" if i % 2 else "#FFFFFF"
-            products_rows += f'''<tr style="background:{row_bg}">
-<td style="padding:12px 14px;border-bottom:1px solid #E0E0E0;font-size:13px;font-weight:500;color:#1A2233;width:40%">{p}</td>
-<td style="padding:12px 14px;border-bottom:1px solid #E0E0E0;font-size:12px;color:#5B6B85;width:40%">Recommended based on your current financial profile and recent activity</td>
-<td style="padding:12px 14px;border-bottom:1px solid #E0E0E0;width:20%;text-align:center"><a href="https://onlinesbi.sbi" style="background:#1B5FA8;color:#FFFFFF;padding:8px 14px;border-radius:4px;text-decoration:none;font-size:11px;font-weight:700;display:inline-block">Apply Now</a></td>
-</tr>'''
-
-    html_body = f"""<!DOCTYPE html>
-<html>
-<body style="margin:0;padding:20px;background:#f0f2f5;font-family:Arial,sans-serif">
-<div style="max-width:600px;margin:0 auto;background:#FFFFFF;border:1px solid #E0E0E0;border-radius:10px;overflow:hidden">
-
-  <!-- Header -->
-  <div style="background:#1B2A4A;padding:24px 28px">
-    <div style="font-size:22px;color:#D4A24C;font-weight:normal">FinTwin by SBI</div>
-    <div style="font-size:13px;color:#8C9AB5;margin-top:4px">Proactive Financial Intelligence</div>
-  </div>
-
-  <!-- Alert Banner -->
-  <div style="background:#EAF1FB;padding:14px 28px;border-left:4px solid #1B5FA8">
-    <div style="font-size:14px;font-weight:700;color:#1B5FA8">{event_type}</div>
-    <div style="font-size:12px;color:#5B6B85;margin-top:3px">{signal}</div>
-  </div>
-
-  <!-- Greeting + Body -->
-  <div style="padding:24px 28px;background:#FFFFFF">
-    <div style="font-size:16px;color:#1A2233;margin-bottom:12px">Dear <strong>{customer_name}</strong>,</div>
-    <div style="font-size:14px;color:#5B6B85;line-height:1.7;margin-bottom:24px">{body_text}</div>
-
-    <!-- Products Table -->
-    <div style="background:#F4F7FC;border-radius:8px;padding:18px;margin-bottom:20px">
-      <div style="font-size:14px;font-weight:700;color:#1A2233;margin-bottom:12px">Recommended for You</div>
-      <table style="width:100%;border-collapse:collapse">
-        <tr style="background:#1B2A4A">
-          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:normal;color:#D4A24C;width:40%">Product</th>
-          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:normal;color:#D4A24C;width:40%">Why Now</th>
-          <th style="padding:10px 14px;text-align:center;font-size:12px;font-weight:normal;color:#D4A24C;width:20%">Action</th>
-        </tr>
-        {products_rows}
-      </table>
-    </div>
-
-    <!-- YONO CTA -->
-    <div style="background:#1B2A4A;border-radius:8px;padding:20px;text-align:center;margin-bottom:16px">
-      <div style="font-size:14px;color:#FFFFFF;margin-bottom:14px">Access all offers instantly on <strong style="color:#D4A24C">YONO SBI</strong></div>
-      <a href="https://onlinesbi.sbi" style="background:#D4A24C;color:#1B2A4A;padding:12px 32px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;display:inline-block">Open YONO Now →</a>
-    </div>
-
-    <!-- Urgency -->
-    <div style="background:#FFF3CD;border-left:3px solid #D4A24C;border-radius:6px;padding:14px 16px">
-      <span style="font-size:12px;color:#856404"><strong>Act soon</strong> — these offers are personalised for your current financial profile and may change. Urgency: <strong>{priority}</strong></span>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div style="background:#F4F7FC;padding:16px 28px;border-top:1px solid #E0E0E0">
-    <p style="margin:0;font-size:11px;color:#8C9AB5;line-height:1.6">This message was generated by <strong>FinTwin</strong> — SBI's AI-powered proactive engagement system. You received this because a significant change was detected in your financial profile.</p>
-    <p style="margin:8px 0 0;font-size:11px;color:#8C9AB5">State Bank of India | <a href="https://onlinesbi.sbi" style="color:#1B5FA8;text-decoration:none">onlinesbi.sbi</a> | <a href="#" style="color:#8C9AB5;text-decoration:none">Unsubscribe</a></p>
-  </div>
-
-</div>
-</body>
-</html>"""
+    """Manually send an outreach email via the n8n/Pipedream webhook."""
     n8n_payload = {
         "customer_name": payload.get("customer_name"),
         "age": payload.get("age", ""),
@@ -494,40 +419,15 @@ async def send_email(payload: dict):
         "signal": payload.get("signal"),
         "recommended_products": payload.get("recommended_products", ""),
         "email": payload.get("to_email", "dev.1806raikwar21@gmail.com"),
+        "to_email": payload.get("to_email", "dev.1806raikwar21@gmail.com"),
         "phone": "+919876543210",
+        "priority": payload.get("priority", "medium"),
         "subject": payload.get("subject", ""),
-        "email_body": html_body,
+        "email_body": payload.get("email_body", payload.get("body", "")),
     }
-    
     success = await send_to_n8n(n8n_payload)
     if not success:
         raise HTTPException(status_code=500, detail="Failed to send email to n8n webhook")
-        
-    # Log to email_deliveries table
-    conn = db.get_connection()
-    try:
-        cursor = conn.cursor()
-        cursor.execute("""
-        SELECT r.run_id FROM agent_runs r
-        JOIN customers c ON r.customer_id = c.customer_id
-        WHERE c.name = ?
-        ORDER BY r.created_at DESC LIMIT 1
-        """, (payload.get("customer_name"),))
-        row = cursor.fetchone()
-        run_id = row["run_id"] if row else None
-    except Exception as db_err:
-        print(f"[API] Error resolving run_id: {db_err}")
-        run_id = None
-    finally:
-        conn.close()
-
-    await asyncio.to_thread(
-        db.record_email_delivery,
-        run_id,
-        payload.get("to_email", "dev.1806raikwar21@gmail.com"),
-        "sent",
-        None
-    )
     return {"success": True}
 
 
