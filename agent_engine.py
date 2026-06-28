@@ -263,6 +263,12 @@ def clean_llm_json(text: str) -> str:
         text = text.strip("`")
         if text.lower().startswith("json"):
             text = text[4:].strip()
+    # Extract JSON object even if LLM adds preamble text before it
+    if not text.strip().startswith("{"):
+        import re as _re
+        m = _re.search(r"\{.*\}", text, _re.DOTALL)
+        if m:
+            text = m.group(0)
         text = text.strip("`").strip()
     return text
 

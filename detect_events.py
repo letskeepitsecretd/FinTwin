@@ -33,6 +33,16 @@ SBI_PRODUCTS = {
         {"name": "SBI Mutual Fund — Bluechip", "type": "investment"},
         {"name": "SBI Life Smart Wealth Plan", "type": "insurance"},
     ],
+    "large_withdrawal": [
+        {"name": "SBI Overdraft Facility", "type": "credit"},
+        {"name": "SBI Personal Loan (Pre-approved)", "type": "loan"},
+        {"name": "SBI Emergency Credit Line", "type": "credit"},
+    ],
+    "retirement_approaching": [
+        {"name": "SBI Life — Smart Pension Plan", "type": "insurance"},
+        {"name": "SBI Annuity Deposit Scheme", "type": "investment"},
+        {"name": "SBI Senior Citizens Savings Scheme", "type": "investment"},
+    ],
 }
 
 
@@ -125,6 +135,27 @@ def detect_savings_milestone(savings_series, milestones=[100000, 200000, 500000]
     return False, None, 0, None
 
 
+
+def detect_large_withdrawal(df_customer, c):
+    """Detects a single large withdrawal (>40% of monthly salary)."""
+    salary = df_customer[df_customer["category"] == "salary"]["amount"].mean() or 30000
+    withdrawals = df_customer[df_customer["category"].isin(["shopping", "travel", "medical"])]
+    for _, row in withdrawals.iterrows():
+        if row["amount"] > salary * 0.4:
+            confidence = min(0.92, 0.65 + (row["amount"] / salary) * 0.1)
+            return True, round(confidence, 2), int(row["amount"])
+    return False, 0, 0
+
+
+def detect_retirement_approaching(c):
+    """Detects customers aged 52-60 who may need retirement planning."""
+    age = c.get("age", 0)
+    if 52 <= age <= 60:
+        confidence = round(min(0.95, 0.70 + (age - 52) * 0.03), 2)
+        return True, confidence
+    return False, 0
+
+
 # ---------- Main detector ----------
 
 def detect_customer_events(df_customer, c):
@@ -136,7 +167,46 @@ def detect_customer_events(df_customer, c):
     detected = []
     cid = c.get("customer_id")
     if not cid:
-        return detected
+    
+    # --- Large withdrawal ---
+    found, conf, amt = detect_large_withdrawal(df_customer, c)
+    if found and conf >= 0.65:
+        detected.append({
+            "customer_id": cid,
+            "customer_name": c.get("name", "Unknown"),
+            "age": c.get("age"),
+            "city": c.get("city"),
+            "event_type": "large_withdrawal",
+            "event_label": "Large Withdrawal Detected",
+            "detected_month": 1,
+            "confidence": conf,
+            "signal": f"Large withdrawal of ₹{amt:,} detected — may indicate financial stress or major purchase",
+            "old_value": 0,
+            "new_value": amt,
+            "recommended_products": SBI_PRODUCTS["large_withdrawal"],
+            "detected_at": datetime.now().isoformat(),
+        })
+
+    # --- Retirement approaching ---
+    found, conf = detect_retirement_approaching(c)
+    if found:
+        detected.append({
+            "customer_id": cid,
+            "customer_name": c.get("name", "Unknown"),
+            "age": c.get("age"),
+            "city": c.get("city"),
+            "event_type": "retirement_approaching",
+            "event_label": "Retirement Planning Opportunity",
+            "detected_month": 1,
+            "confidence": conf,
+            "signal": f"Customer aged {c.get('age')} — ideal time to review retirement and pension plans",
+            "old_value": 0,
+            "new_value": c.get("age"),
+            "recommended_products": SBI_PRODUCTS["retirement_approaching"],
+            "detected_at": datetime.now().isoformat(),
+        })
+
+    return detected
 
     # Helper to group by month
     salary_series = df_customer[df_customer["category"] == "salary"].groupby("month")["amount"].sum()
