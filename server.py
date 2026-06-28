@@ -357,7 +357,7 @@ async def send_email(payload: dict):
         "email": payload.get("to_email", "dev.1806raikwar21@gmail.com"),
         "phone": "+919876543210",
         "subject": payload.get("subject", ""),
-        "email_body": payload.get("body", ""),
+        "email_body": payload.get("email_body", payload.get("body", "")),  # support both field names
     }
     
     success = await send_to_n8n(n8n_payload)

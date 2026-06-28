@@ -364,7 +364,7 @@ const FinTwinDashboard: React.FC = () => {
           signal: decision.signal,
           recommended_products: decision.finalProducts.join(", "),
           subject: decision.outreachSubject || `SBI FinTwin — ${decision.eventType}`,
-          body: decision.outreachBody,
+          email_body: decision.outreachBody,
         }),
       });
       if (res.ok) {
