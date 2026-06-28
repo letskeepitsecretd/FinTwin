@@ -157,7 +157,7 @@ async def transaction_generator_loop():
 async def send_to_n8n(payload: dict) -> bool:
     """Helper to send an email payload to the n8n webhook."""
     import httpx
-    N8N_WEBHOOK_URL = "http://localhost:5678/webhook/fintwin-engine"
+    N8N_WEBHOOK_URL = os.getenv("N8N_WEBHOOK_URL", "http://localhost:5678/webhook/fintwin-engine")
     try:
         async with httpx.AsyncClient(timeout=15) as client:
             print(f"[n8n payload]: {json.dumps(payload, ensure_ascii=False)}")
