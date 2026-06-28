@@ -353,55 +353,71 @@ async def send_email(payload: dict):
     event_type = payload.get("event_type", "")
     signal = payload.get("signal", "")
     priority = payload.get("priority", "high")
-    
+
     products_rows = ""
-    for p in prods.split(","):
+    for i, p in enumerate(prods.split(",")):
         p = p.strip()
         if p:
-            products_rows += f"""<tr>
-                <td style="padding:14px 12px;border-bottom:1px solid #eee;font-size:14px;color:#1a1a2e;font-weight:500">{p}</td>
-                <td style="padding:14px 12px;border-bottom:1px solid #eee;font-size:13px;color:#666">Recommended based on your current financial profile and recent activity</td>
-                <td style="padding:14px 12px;border-bottom:1px solid #eee;text-align:right"><a href="https://onlinesbi.sbi" style="background:#1a237e;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">Apply Now</a></td>
-            </tr>"""
-    
+            row_bg = "#FAFBFE" if i % 2 else "#FFFFFF"
+            products_rows += f'''<tr style="background:{row_bg}">
+<td style="padding:12px 14px;border-bottom:1px solid #E0E0E0;font-size:13px;font-weight:500;color:#1A2233;width:40%">{p}</td>
+<td style="padding:12px 14px;border-bottom:1px solid #E0E0E0;font-size:12px;color:#5B6B85;width:40%">Recommended based on your current financial profile and recent activity</td>
+<td style="padding:12px 14px;border-bottom:1px solid #E0E0E0;width:20%;text-align:center"><a href="https://onlinesbi.sbi" style="background:#1B5FA8;color:#FFFFFF;padding:8px 14px;border-radius:4px;text-decoration:none;font-size:11px;font-weight:700;display:inline-block">Apply Now</a></td>
+</tr>'''
+
     html_body = f"""<!DOCTYPE html>
 <html>
 <body style="margin:0;padding:20px;background:#f0f2f5;font-family:Arial,sans-serif">
-<div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
-  <div style="background:#1a237e;padding:28px 32px">
-    <h1 style="color:#c9a84c;margin:0;font-size:24px;font-weight:700">FinTwin by SBI</h1>
-    <p style="color:#8892b0;margin:6px 0 0;font-size:14px">Proactive Financial Intelligence</p>
+<div style="max-width:600px;margin:0 auto;background:#FFFFFF;border:1px solid #E0E0E0;border-radius:10px;overflow:hidden">
+
+  <!-- Header -->
+  <div style="background:#1B2A4A;padding:24px 28px">
+    <div style="font-size:22px;color:#D4A24C;font-weight:normal">FinTwin by SBI</div>
+    <div style="font-size:13px;color:#8C9AB5;margin-top:4px">Proactive Financial Intelligence</div>
   </div>
-  <div style="background:#e8f0fe;padding:16px 32px;border-left:4px solid #1a237e">
-    <p style="color:#1a237e;font-weight:600;margin:0;font-size:15px">{event_type}</p>
-    <p style="color:#555;margin:4px 0 0;font-size:13px">{signal}</p>
+
+  <!-- Alert Banner -->
+  <div style="background:#EAF1FB;padding:14px 28px;border-left:4px solid #1B5FA8">
+    <div style="font-size:14px;font-weight:700;color:#1B5FA8">{event_type}</div>
+    <div style="font-size:12px;color:#5B6B85;margin-top:3px">{signal}</div>
   </div>
-  <div style="padding:28px 32px">
-    <p style="font-size:18px;color:#1a1a2e;margin:0 0 16px">Dear <strong>{customer_name}</strong>,</p>
-    <p style="font-size:15px;color:#555;line-height:1.7;margin:0 0 24px">{body_text}</p>
-    <div style="background:#f8f9fa;border-radius:10px;padding:20px;margin-bottom:24px">
-      <h3 style="color:#1a1a2e;margin:0 0 16px;font-size:16px">Recommended for You</h3>
+
+  <!-- Greeting + Body -->
+  <div style="padding:24px 28px;background:#FFFFFF">
+    <div style="font-size:16px;color:#1A2233;margin-bottom:12px">Dear <strong>{customer_name}</strong>,</div>
+    <div style="font-size:14px;color:#5B6B85;line-height:1.7;margin-bottom:24px">{body_text}</div>
+
+    <!-- Products Table -->
+    <div style="background:#F4F7FC;border-radius:8px;padding:18px;margin-bottom:20px">
+      <div style="font-size:14px;font-weight:700;color:#1A2233;margin-bottom:12px">Recommended for You</div>
       <table style="width:100%;border-collapse:collapse">
-        <tr style="background:#1a237e;border-radius:6px">
-          <th style="padding:12px;text-align:left;color:#c9a84c;font-size:13px;width:40%">Product</th>
-          <th style="padding:12px;text-align:left;color:#c9a84c;font-size:13px;width:40%">Why Now</th>
-          <th style="padding:12px;text-align:right;color:#c9a84c;font-size:13px;width:20%">Action</th>
+        <tr style="background:#1B2A4A">
+          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:normal;color:#D4A24C;width:40%">Product</th>
+          <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:normal;color:#D4A24C;width:40%">Why Now</th>
+          <th style="padding:10px 14px;text-align:center;font-size:12px;font-weight:normal;color:#D4A24C;width:20%">Action</th>
         </tr>
         {products_rows}
       </table>
     </div>
-    <div style="background:#1a237e;border-radius:10px;padding:24px;text-align:center;margin-bottom:20px">
-      <p style="color:#fff;font-size:16px;margin:0 0 16px">Access all offers instantly on <strong style="color:#c9a84c">YONO SBI</strong></p>
-      <a href="https://onlinesbi.sbi" style="background:#c9a84c;color:#1a237e;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;display:inline-block">Open YONO Now →</a>
+
+    <!-- YONO CTA -->
+    <div style="background:#1B2A4A;border-radius:8px;padding:20px;text-align:center;margin-bottom:16px">
+      <div style="font-size:14px;color:#FFFFFF;margin-bottom:14px">Access all offers instantly on <strong style="color:#D4A24C">YONO SBI</strong></div>
+      <a href="https://onlinesbi.sbi" style="background:#D4A24C;color:#1B2A4A;padding:12px 32px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;display:inline-block">Open YONO Now →</a>
     </div>
-    <div style="background:#fef9e7;border:1px solid #c9a84c;border-radius:8px;padding:16px">
-      <p style="margin:0;color:#7d6608;font-size:14px"><strong>Act soon</strong> — these offers are personalised for your current financial profile and may change. Urgency: <strong>{priority}</strong></p>
+
+    <!-- Urgency -->
+    <div style="background:#FFF3CD;border-left:3px solid #D4A24C;border-radius:6px;padding:14px 16px">
+      <span style="font-size:12px;color:#856404"><strong>Act soon</strong> — these offers are personalised for your current financial profile and may change. Urgency: <strong>{priority}</strong></span>
     </div>
   </div>
-  <div style="padding:20px 32px;border-top:1px solid #eee">
-    <p style="color:#999;font-size:12px;line-height:1.6;margin:0">This message was generated by <strong>FinTwin</strong> — SBI's AI-powered proactive engagement system. You received this because a significant change was detected in your financial profile.</p>
-    <p style="color:#999;font-size:12px;margin:8px 0 0">State Bank of India | <a href="https://onlinesbi.sbi" style="color:#1a237e">onlinesbi.sbi</a> | <a href="#" style="color:#999">Unsubscribe</a></p>
+
+  <!-- Footer -->
+  <div style="background:#F4F7FC;padding:16px 28px;border-top:1px solid #E0E0E0">
+    <p style="margin:0;font-size:11px;color:#8C9AB5;line-height:1.6">This message was generated by <strong>FinTwin</strong> — SBI's AI-powered proactive engagement system. You received this because a significant change was detected in your financial profile.</p>
+    <p style="margin:8px 0 0;font-size:11px;color:#8C9AB5">State Bank of India | <a href="https://onlinesbi.sbi" style="color:#1B5FA8;text-decoration:none">onlinesbi.sbi</a> | <a href="#" style="color:#8C9AB5;text-decoration:none">Unsubscribe</a></p>
   </div>
+
 </div>
 </body>
 </html>"""
