@@ -351,7 +351,7 @@ async def send_email(payload: dict):
     prods = payload.get("recommended_products", "")
     products_html = "".join([f"<tr><td style='padding:10px 8px;border-bottom:1px solid #eee;font-size:14px'>{p.strip()}</td></tr>" for p in prods.split(",") if p.strip()])
     html_body = f"""<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #ddd;border-radius:8px;overflow:hidden"><div style="background:#1a237e;padding:20px;text-align:center"><h1 style="color:#ffd700;margin:0;font-size:20px">SBI FinTwin</h1><p style="color:#fff;margin:4px 0 0;font-size:12px">Agentic AI · Powered by SBI</p></div><div style="padding:24px"><p style="font-size:15px;color:#333;line-height:1.6">{body_text}</p><h3 style="color:#1a237e;border-bottom:2px solid #ffd700;padding-bottom:6px">Recommended Products</h3><table style="width:100%;border-collapse:collapse">{products_html}</table><p style="font-size:11px;color:#999;margin-top:20px">AI-generated recommendation. Please refer to official SBI terms before making financial decisions.</p></div><div style="background:#f5f5f5;padding:10px;text-align:center;font-size:11px;color:#999">SBI FinTwin · SBI Banking AI Hackathon 2026</div></div>"""
-    n8n_payload = {{
+    n8n_payload = {
         "customer_name": payload.get("customer_name"),
         "age": payload.get("age", ""),
         "city": payload.get("city", ""),
@@ -362,7 +362,7 @@ async def send_email(payload: dict):
         "phone": "+919876543210",
         "subject": payload.get("subject", ""),
         "email_body": html_body,
-    }}
+    }
     
     success = await send_to_n8n(n8n_payload)
     if not success:
