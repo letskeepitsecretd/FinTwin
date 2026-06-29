@@ -280,7 +280,7 @@ const FinTwinDashboard: React.FC = () => {
 
     // Load existing runs from SQLite-backed API on mount
   React.useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL || "http://localhost:8000/api/runs")
+    fetch((import.meta.env.VITE_API_URL || "http://localhost:8000") + "/api/runs")
       .then(r => r.json())
       .then((runs: any[]) => {
         if (!Array.isArray(runs)) return;
