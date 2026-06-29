@@ -108,7 +108,7 @@ async def transaction_generator_loop():
                 print(f"[DEBUG] selected customer: cid={cid}, should_inject={should_inject_event}")
                 if cid:
                     if should_inject_event:
-                        etype = random.choice(["salary_jump", "new_emi", "savings_milestone"])
+                        etype = random.choice(["salary_jump", "new_emi", "savings_milestone", "large_withdrawal", "retirement_approaching"])
                         print(f"[Simulator] Injecting event '{etype}' for customer {cid}...")
                         txn = simulator.force_month_transition_with_event(cid, etype)
                         last_event_injection_time = current_time
