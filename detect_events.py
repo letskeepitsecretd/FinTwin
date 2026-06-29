@@ -167,7 +167,8 @@ def detect_customer_events(df_customer, c):
     detected = []
     cid = c.get("customer_id")
     if not cid:
-    
+        return detected
+
     # --- Large withdrawal ---
     found, conf, amt = detect_large_withdrawal(df_customer, c)
     if found and conf >= 0.65:
