@@ -346,23 +346,14 @@ async def startup_event():
     agent_queue = asyncio.Queue()
     simulator = TransactionSimulator()
     
-    # Pre-populate processed events from database
-    conn = db.get_connection()
+    # NOTE: processed_events intentionally starts empty every run.
+    # DB is ephemeral on Render's /tmp, so pre-loading old (cid, etype, month)
+    # combos was blocking fresh injected events from ever re-triggering for
+    # the same customer/event_type/month, heavily biasing which event types
+    # appeared to work. Starting clean every restart fixes this.
+    conn = None
     try:
-        cursor = conn.cursor()
-        cursor.execute("""
-        SELECT r.customer_id, e.event_type, e.detected_month
-        FROM agent_runs r
-        JOIN events e ON r.event_id = e.event_id
-        """)
-        rows = cursor.fetchall()
-        for r in rows:
-            cid = r["customer_id"]
-            etype = r["event_type"]
-            month = r["detected_month"] or 6
-            if cid and etype:
-                processed_events.add((cid, etype, month))
-        print(f"[Startup] Loaded {len(processed_events)} previously processed events from database.")
+        pass
     except Exception as e:
         print(f"[Startup] Error pre-populating processed events: {e}")
     finally:
