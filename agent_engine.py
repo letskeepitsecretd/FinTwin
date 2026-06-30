@@ -547,7 +547,7 @@ def process_customer(event: dict, customer: dict) -> dict:
         "signal": event.get("signal"),
         "confidence": event.get("confidence"),
         "candidate_products": event.get("recommended_products", []),
-        "final_products": decision.get("final_products", []),
+        "final_products": decision.get("final_products") or [p["name"] for p in event.get("recommended_products", [])],
         "reasoning": decision.get("reasoning"),
         "priority": decision.get("priority"),
         "priority_reason": decision.get("priority_reason"),
