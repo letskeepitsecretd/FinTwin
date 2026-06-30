@@ -169,8 +169,8 @@ def detect_customer_events(df_customer, c):
     if not cid:
         return detected
 
-    # --- Large withdrawal ---
-    found, conf, amt = detect_large_withdrawal(df_customer, c)
+    # --- Large withdrawal (disabled in passive scan; handled via injection only) ---
+    found, conf, amt = False, 0, 0
     if found and conf >= 0.65:
         detected.append({
             "customer_id": cid,
@@ -188,8 +188,8 @@ def detect_customer_events(df_customer, c):
             "detected_at": datetime.now().isoformat(),
         })
 
-    # --- Retirement approaching ---
-    found, conf = detect_retirement_approaching(c)
+    # --- Retirement approaching (disabled in passive scan; handled via injection only) ---
+    found, conf = False, 0
     if found:
         detected.append({
             "customer_id": cid,

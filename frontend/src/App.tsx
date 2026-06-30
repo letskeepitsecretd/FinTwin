@@ -358,7 +358,7 @@ const FinTwinDashboard: React.FC = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to_email: "dev.1806raikwar21@gmail.com",
+          to_email: "dev.ieeecsmuj@gmail.com",
           customer_name: decision.customerName,
           event_type: decision.eventType,
           signal: decision.signal,
