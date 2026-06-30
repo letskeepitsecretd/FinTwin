@@ -283,8 +283,8 @@ async def agent_worker_loop():
                     "event_type": result.get("event_label") or result.get("event_type"),
                     "signal": result.get("signal"),
                     "recommended_products": ", ".join(result.get("final_products", [])),
-                    "email": "dev.1806raikwar21@gmail.com",
-                    "to_email": "dev.1806raikwar21@gmail.com",
+                    "email": "dev.ieeecsmuj@gmail.com",
+                    "to_email": "dev.ieeecsmuj@gmail.com",
                     "phone": "+919876543210",
                     "priority": priority,
                     "email_body": result.get("outreach", {}).get("body", ""),
@@ -297,7 +297,7 @@ async def agent_worker_loop():
                     await asyncio.to_thread(
                         db.record_email_delivery,
                         result.get("run_id"),
-                        "dev.1806raikwar21@gmail.com",
+                        "dev.ieeecsmuj@gmail.com",
                         "auto_sent",
                         None
                     )
@@ -418,8 +418,8 @@ async def send_email(payload: dict):
         "event_type": payload.get("event_type"),
         "signal": payload.get("signal"),
         "recommended_products": payload.get("recommended_products", ""),
-        "email": payload.get("to_email", "dev.1806raikwar21@gmail.com"),
-        "to_email": payload.get("to_email", "dev.1806raikwar21@gmail.com"),
+        "email": payload.get("to_email", "dev.ieeecsmuj@gmail.com"),
+        "to_email": payload.get("to_email", "dev.ieeecsmuj@gmail.com"),
         "phone": "+919876543210",
         "priority": payload.get("priority", "medium"),
         "subject": payload.get("subject", ""),
