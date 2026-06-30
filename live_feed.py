@@ -136,56 +136,26 @@ class TransactionSimulator:
             sav_date = datetime(next_date.year, next_date.month, 2)
             if event_type == "large_withdrawal":
                 amount = random.randint(15000, 80000)
-                transactions.append({
-                    "id": f"{date}-{cid}-{amount}",
+                monthly_txns.append({
                     "customer_id": cid,
-                    "customer_name": customer.get("name", ""),
-                    "amount": amount,
+                    "date": sav_date.strftime("%Y-%m-%d"),
+                    "type": "debit",
                     "category": random.choice(["shopping", "travel", "medical"]),
-                    "date": date,
-                    "is_life_event": True,
-                })
-                detected_events.append({
-                    "customer_id": cid,
-                    "customer_name": customer.get("name", ""),
-                    "age": customer.get("age"),
-                    "city": customer.get("city"),
-                    "event_type": "large_withdrawal",
-                    "event_label": "Large Withdrawal Detected",
-                    "confidence": round(random.uniform(0.72, 0.92), 2),
-                    "signal": f"Large withdrawal of ₹{amount:,} detected — may indicate financial stress or major purchase",
-                    "recommended_products": [
-                        {"name": "SBI Overdraft Facility", "type": "credit"},
-                        {"name": "SBI Personal Loan (Pre-approved)", "type": "loan"},
-                        {"name": "SBI Emergency Credit Line", "type": "credit"},
-                    ],
+                    "amount": amount,
+                    "description": "LARGE WITHDRAWAL",
+                    "month": next_month
                 })
 
             elif event_type == "retirement_approaching":
-                age = customer.get("age", 55)
-                transactions.append({
-                    "id": f"{date}-{cid}-ret",
+                age = c.get("age", 55)
+                monthly_txns.append({
                     "customer_id": cid,
-                    "customer_name": customer.get("name", ""),
-                    "amount": random.randint(5000, 20000),
+                    "date": sav_date.strftime("%Y-%m-%d"),
+                    "type": "credit",
                     "category": "savings_transfer",
-                    "date": date,
-                    "is_life_event": True,
-                })
-                detected_events.append({
-                    "customer_id": cid,
-                    "customer_name": customer.get("name", ""),
-                    "age": age,
-                    "city": customer.get("city"),
-                    "event_type": "retirement_approaching",
-                    "event_label": "Retirement Planning Opportunity",
-                    "confidence": round(random.uniform(0.75, 0.95), 2),
-                    "signal": f"Customer aged {age} — ideal time to review retirement and pension plans",
-                    "recommended_products": [
-                        {"name": "SBI Life — Smart Pension Plan", "type": "insurance"},
-                        {"name": "SBI Annuity Deposit Scheme", "type": "investment"},
-                        {"name": "SBI Senior Citizens Savings Scheme", "type": "investment"},
-                    ],
+                    "amount": random.randint(5000, 20000),
+                    "description": "RETIREMENT SAVINGS",
+                    "month": next_month
                 })
 
             if event_type == "savings_milestone":

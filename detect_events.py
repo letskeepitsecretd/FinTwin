@@ -137,21 +137,26 @@ def detect_savings_milestone(savings_series, milestones=[100000, 200000, 500000]
 
 
 def detect_large_withdrawal(df_customer, c):
-    """Detects a single large withdrawal (>40% of monthly salary)."""
-    salary = df_customer[df_customer["category"] == "salary"]["amount"].mean() or 30000
-    withdrawals = df_customer[df_customer["category"].isin(["shopping", "travel", "medical"])]
-    for _, row in withdrawals.iterrows():
-        if row["amount"] > salary * 0.4:
-            confidence = min(0.92, 0.65 + (row["amount"] / salary) * 0.1)
-            return True, round(confidence, 2), int(row["amount"])
+    """Detects an injected large withdrawal transaction marked by description."""
+    if "description" not in df_customer.columns:
+        return False, 0, 0
+    flagged = df_customer[df_customer["description"] == "LARGE WITHDRAWAL"]
+    if len(flagged) > 0:
+        row = flagged.iloc[-1]
+        salary = df_customer[df_customer["category"] == "salary"]["amount"].mean() or 30000
+        confidence = min(0.92, 0.65 + (row["amount"] / salary) * 0.1)
+        return True, round(confidence, 2), int(row["amount"])
     return False, 0, 0
 
 
-def detect_retirement_approaching(c):
-    """Detects customers aged 52-60 who may need retirement planning."""
-    age = c.get("age", 0)
-    if 52 <= age <= 60:
-        confidence = round(min(0.95, 0.70 + (age - 52) * 0.03), 2)
+def detect_retirement_approaching(c, df_customer=None):
+    """Detects an injected retirement-savings transaction marked by description."""
+    if df_customer is None or "description" not in df_customer.columns:
+        return False, 0
+    flagged = df_customer[df_customer["description"] == "RETIREMENT SAVINGS"]
+    if len(flagged) > 0:
+        age = c.get("age", 55)
+        confidence = round(min(0.95, 0.70 + max(0, age - 52) * 0.03), 2)
         return True, confidence
     return False, 0
 
@@ -169,9 +174,9 @@ def detect_customer_events(df_customer, c):
     if not cid:
         return detected
 
-    # --- Large withdrawal (disabled in passive scan; handled via injection only) ---
-    found, conf, amt = False, 0, 0
-    if found and conf >= 0.65:
+    # --- Large withdrawal ---
+    found, conf, amt = detect_large_withdrawal(df_customer, c)
+    if found and conf >= 0.60:
         detected.append({
             "customer_id": cid,
             "customer_name": c.get("name", "Unknown"),
@@ -188,8 +193,8 @@ def detect_customer_events(df_customer, c):
             "detected_at": datetime.now().isoformat(),
         })
 
-    # --- Retirement approaching (disabled in passive scan; handled via injection only) ---
-    found, conf = False, 0
+    # --- Retirement approaching ---
+    found, conf = detect_retirement_approaching(c, df_customer)
     if found:
         detected.append({
             "customer_id": cid,
