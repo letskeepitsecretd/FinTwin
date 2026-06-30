@@ -107,7 +107,7 @@ class TransactionSimulator:
             state["last_month"] = next_month
             
             event_type = None
-            if random.random() < 0.15:
+            if random.random() < 0.6:
                 event_type = random.choice(["salary_jump", "new_emi", "savings_milestone", "large_withdrawal", "retirement_approaching"])
                 state["injected_event_type"] = event_type
             
@@ -303,7 +303,32 @@ class TransactionSimulator:
 
         # B. Savings Transfer on the 2nd
         sav_date = datetime(next_date.year, next_date.month, 2)
-        if event_type == "savings_milestone":
+        if event_type == "large_withdrawal":
+            wd_amount = random.randint(15000, 80000)
+            monthly_txns.append({
+                "customer_id": cid,
+                "date": sav_date.strftime("%Y-%m-%d"),
+                "type": "debit",
+                "category": random.choice(["shopping", "travel", "medical"]),
+                "amount": wd_amount,
+                "description": "LARGE WITHDRAWAL",
+                "month": next_month
+            })
+            sav_amount = int(c["base_salary"] * random.uniform(0.05, 0.2))
+            desc = "SELF TRANSFER TO SAVINGS"
+        elif event_type == "retirement_approaching":
+            monthly_txns.append({
+                "customer_id": cid,
+                "date": sav_date.strftime("%Y-%m-%d"),
+                "type": "credit",
+                "category": "savings_transfer",
+                "amount": random.randint(5000, 20000),
+                "description": "RETIREMENT SAVINGS",
+                "month": next_month
+            })
+            sav_amount = int(c["base_salary"] * random.uniform(0.05, 0.2))
+            desc = "SELF TRANSFER TO SAVINGS"
+        elif event_type == "savings_milestone":
             curr_savings = self.get_cumulative_savings(cid)
             milestones = [100000, 200000, 500000]
             target_m = 100000
