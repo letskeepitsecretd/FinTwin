@@ -412,7 +412,7 @@ async def get_run(customer_id: str):
 async def send_email(payload: dict):
     """Manually send an outreach email via the n8n/Pipedream webhook."""
     n8n_payload = {
-        "customer_name": payload.get("customer_name"),
+        "customer_name": payload.get("customer_name") or "Valued Customer",
         "age": payload.get("age", ""),
         "city": payload.get("city", ""),
         "event_type": payload.get("event_type"),
