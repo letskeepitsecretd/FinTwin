@@ -357,7 +357,8 @@ async def startup_event():
     except Exception as e:
         print(f"[Startup] Error pre-populating processed events: {e}")
     finally:
-        conn.close()
+        if conn is not None:
+            conn.close()
             
     # Launch background loops
     task_gen = asyncio.create_task(transaction_generator_loop())
